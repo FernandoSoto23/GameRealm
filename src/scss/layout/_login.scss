@@ -1,0 +1,9 @@
+@import '../base/mixins';
+
+.prueba{
+    @include Cambiar(red,uppercase);
+    @include telefono(){
+        
+    }
+}
+

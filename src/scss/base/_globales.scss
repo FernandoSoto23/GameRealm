@@ -1,0 +1,56 @@
+@use 'variables';
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+body{
+    font-family: $fuente;
+    font-size: 1.6rem;
+}
+
+p{
+    font-size: 2rem;
+    color: $negro;
+}
+.contenedor{
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3{
+    margin: 0 0 5rem 0;
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3.6rem;
+}
+h3{
+    font-size: 3rem;
+}
+
+//interfaz
+
+.boton{
+    padding: 1rem;
+    border: none;
+    background-color: rgba(255, 0, 0, 0);
+    border: .1rem solid $negro;
+}
+.input{
+    border: none; 
+    padding: 1rem;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+}

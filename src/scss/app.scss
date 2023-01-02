@@ -1,0 +1,14 @@
+/* base */
+@import 'base/variables';
+@import 'base/normalize';
+@import 'base/globales';
+@import 'base/mixins';
+
+/* layoult */
+@import 'layout/login.scss';
+@import 'layout/header.scss';
+@import 'layout/barra.scss';
+@import 'layout/home';
+@import 'layout/footer';
+@import 'layout/mainApp';
+@import 'layout/menu'
