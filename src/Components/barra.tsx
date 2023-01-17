@@ -34,7 +34,7 @@ export function Barra(props:any){
 
                 <div className="barra-opciones">
                     <ul>
-                        <NavLink to="/ComidaRapida" className ={ ( ({isActive})=> isActive ? 'activo' : '' ) }>
+                        <NavLink  to="/ComidaRapida" className ={ ( ({isActive})=> isActive ? 'activo' : '' ) }>
                             <li className="boton barra-botones">
                                 <img src="https://i.ibb.co/rxyCsqq/hamburguesa.png" alt="hamburguesa"/>
                                 <p>Comida Rapida</p>
@@ -42,7 +42,7 @@ export function Barra(props:any){
                         </NavLink>
                     </ul>
                     <ul>
-                        <NavLink to="./Ensaladas" className ={ ( ({isActive})=> isActive ? 'activo' : '' ) }>
+                        <NavLink  to="./Ensaladas" className ={ ( ({isActive})=> isActive ? 'activo' : '' ) }>
                             <li className="boton barra-botones">
                                 <img src="https://i.ibb.co/cY79S40/ensalada-1.png" alt="ensalada-1" />
                                 <p>Ensaladas</p>
