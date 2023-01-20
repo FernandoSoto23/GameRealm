@@ -38,8 +38,8 @@ export function Orden(props : any){
         <>
             <article className='contenido-producto'>
                 <h1>{titulo}</h1>
-                <div className='contenedor-producto'>
-                    <img src={imagen} alt="..." />
+                <div>
+                    <img className="ajustar-imagen" src={imagen} alt="..." />
                     <p>Precio: <span>${precio}</span></p>
                     <p>{descripcion}</p>
                 </div>

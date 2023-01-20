@@ -16,9 +16,6 @@
         padding: 0 1rem;
         margin: 0;
     }
-    h3{
-        text-align: center;
-    }
 
     @include tablet(){
         margin-top: auto;
@@ -26,12 +23,7 @@
         height: 20rem;
     }
 
-    .contenedor-producto{
-        img{
-            width: 100%;
-            height: 100%;
-        }
-    }
+
     .span-precio{
         font-weight: $bold;
         color: $verdeDollar;

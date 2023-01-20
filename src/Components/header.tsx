@@ -1,9 +1,38 @@
+import path from "path";
+import { useState } from "react";
+import Cookies from "universal-cookie";
 
 //menu fixed
 
 
 export function Header(){
+    const cookies = new Cookies;
+    let btnDakMode = cookies.get('DarkMode') === 'Activo';
+    const [Check,setCheck] = useState(btnDakMode);
+   
+    
+    const darkMode = document.querySelector('body');
+    if(cookies.get('DarkMode') === 'Activo'){
+        darkMode?.classList.add('DarkMode');
+
+    }else{
+        darkMode?.classList.remove('DarkMode');
+    }
     let variable = 10;
+
+    function DarkMode(){
+        
+        if(Check){
+            cookies.set('DarkMode', 'Desactivo' ,{path:"/"});
+            setCheck(false);
+        }
+        else{
+            cookies.set('DarkMode', 'Activo' ,{path:"/"});
+            setCheck(true);
+        }
+
+    }
+
     function click(){
         console.log("desde click");
     }
@@ -24,9 +53,12 @@ export function Header(){
                     </a>
                 </div>
             </nav>
-            <div className="header-logueo">
+            <div className="header-logueo form-check form-switch">
                 <a href="">Iniciar Sesion</a>
+                <input checked={Check} className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={DarkMode}/>
+
             </div>
         </header>
     );
 };
+

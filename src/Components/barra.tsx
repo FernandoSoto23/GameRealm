@@ -5,7 +5,7 @@ import {
     Link,
     NavLink
   } from "react-router-dom";
-  
+
   const imagen = require('../build/img/logo.png') ;
   const despliegue = require('../build/img/menu.png');
 
@@ -26,7 +26,7 @@ export function Barra(props:any){
                     <Link to="./home">
                         <img src={imagen} alt="Logo"/>
                     </Link>
-                    <p>Fernando</p>
+                    <p className="saludo">Hola, Default9999</p>
                     <div className="mobile-menu">
                         <img src={despliegue} alt="barra" />
                     </div>
