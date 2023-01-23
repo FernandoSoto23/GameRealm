@@ -1,5 +1,6 @@
 import path from "path";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import Cookies from "universal-cookie";
 
 //menu fixed
@@ -53,8 +54,10 @@ export function Header(){
                     </a>
                 </div>
             </nav>
+            
             <div className="header-logueo form-check form-switch">
-                <a href="">Iniciar Sesion</a>
+                
+                <NavLink to="./Login">Iniciar Sesion</NavLink>
                 <input checked={Check} className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={DarkMode}/>
 
             </div>

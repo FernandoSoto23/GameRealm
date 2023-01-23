@@ -6,6 +6,7 @@ import {
     useLocation
 } from "react-router-dom";
 import { Home } from "./home";
+import { Login } from "./login";
 
 import { Menu } from "./menus";
 import { Orden } from "./orden";
@@ -47,6 +48,7 @@ export function Contenido(){
                     <Route path="/Bebidas" element={<Menu Tipo={4} />}> </Route>
                     <Route path="/Postres" element={<Menu Tipo={5} />}> </Route>
                     <Route path="/Especiales" element={<Menu Tipo={6} />}> </Route>
+                    <Route path="/Login" element={<Login />}> </Route>
 
                     {checar && <Route path={location.pathname} element={<Orden/>}> </Route>}
                     <Route path="/home" element={<Home/>}> </Route>

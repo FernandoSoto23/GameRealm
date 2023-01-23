@@ -1,8 +1,15 @@
-@import '../base/mixins';
 
-.prueba{
-    @include Cambiar(red,uppercase);
-    @include telefono(){
+
+
+.contenedor-login{
+    display: flex;
+    flex-direction: column;
+    .contenedor-Logueo{
+        width: 100%;
+    }
+    .input-email,.input-password{
+        width: 90%;
+        margin: 0 2rem;
     }
 }
 
