@@ -4,12 +4,38 @@
 .contenedor-login{
     display: flex;
     flex-direction: column;
+    padding: 2.5rem;
     .contenedor-Logueo{
         width: 100%;
     }
-    .input-email,.input-password{
+    .img-login{
+        margin: 0 auto;
+        width: 50%;
+        height: 50%;
+    }
+    .input-login,.label-login{
         width: 90%;
         margin: 0 2rem;
+    }
+    .btn-logueo{
+        width: 80%;
+        margin: 1rem auto;
+        color: $negro;
+    }
+    .p-login{
+        margin: 0;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .btn-crearCuenta{
+        margin: 1rem auto;
+        padding: .2rem;
+        width: 80%;
+        border-radius: 0;
+        border: 1px solid $grisNavegacion;
+        box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
     }
 }
 
