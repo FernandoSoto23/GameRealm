@@ -49,8 +49,8 @@ export function MenuDinamico(props : any){
                 
                  Menu.map( (menus : any) => (
                     <Link to={`./Orden?codigo=${menus.codigo}`} key={ menus.codigo }>
-                        <article className='card-contenido contenido-producto'>
-                            <div>
+                        <article className='contenido-producto'>
+                            <div className='contenedor-producto'>
                                 <img className='ajustar-imagen' src={menus.imagen} alt="..." />
                                 <h3 className='texto-centrado'>{menus.titulo}</h3>
                                 <div className='linea'></div>

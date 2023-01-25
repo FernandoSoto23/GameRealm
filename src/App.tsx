@@ -17,6 +17,7 @@ function App() {
         <Header></Header>
         <Barra texto={guardar}></Barra>
         <Contenido></Contenido>
+        
       </div>
       
     </div>

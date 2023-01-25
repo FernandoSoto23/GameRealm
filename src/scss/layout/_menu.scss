@@ -2,6 +2,14 @@
 
 .contenido-producto{
 
+    margin: 3rem auto;
+    padding-bottom: 2rem;
+    width: 90%;
+    height: auto;
+    box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
+    border-radius: 1rem;
     h3,p{
         font-weight: normal;
         color: $negro;
@@ -24,5 +32,10 @@
         font-size: 1.5rem;
         color: rgb(112, 112, 112);
     }
-
+    .linea{
+        width: 95%;
+        height: .1rem;
+        margin: 0 auto;
+        background-color: rgb(215, 215, 215);
+    }
 }

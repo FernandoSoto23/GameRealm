@@ -5,29 +5,15 @@
     p,a{
         color: rgb(154, 154, 154);
     }
-    h1,h2,h3,h4,label{
+    h1,h2,h3,h4{
         color: $blanco;
     }
     .saludo{
         color: $blanco;
     }
-    .card-contenido{
-        
-    }
-    .input{
-        color: $blanco;
-        background-color: $grisNavegacion;
-
-    }
-    button{
-        color: $blanco;
-    }
-    .input-login{
-        border: none;
-    }
-    .activo{
-        p{
-            color: $amarillo;
-        }
+    .contenido-producto{
+        box-shadow: -1px 2px 20px 9px rgba(255,255,255,0.06);
+        -webkit-box-shadow: -1px 2px 20px 9px rgba(255,255,255,0.06);
+        -moz-box-shadow: -1px 2px 20px 9px rgba(255,255,255,0.06);
     }
 }

@@ -354,33 +354,18 @@ h3 {
   font-size: 3rem;
 }
 
-/* Botones */
 .boton {
   padding: 1rem;
   border: none;
   background-color: rgba(255, 0, 0, 0);
-  border-radius: 1rem;
+  border: 0.1rem solid #000000;
 }
 
-.boton-verde {
-  background-color: #4CB8B3;
-}
-
-.boton-rojo-amarillo {
-  background-color: rgb(248, 37, 9);
-}
-
-.boton-amarillo {
-  background-color: #fef46D;
-}
-
-/* Fin Botones */
 .input {
-  border: 1px solid #000000;
+  border: none;
   padding: 1rem;
   border-radius: 0.5rem;
   font-size: 1.5rem;
-  outline: none;
 }
 
 .texto-centrado {
@@ -392,63 +377,13 @@ h3 {
   max-height: 100%;
 }
 
-.card-contenido {
-  margin: 3rem auto;
-  padding-bottom: 2rem;
-  width: 90%;
-  height: auto;
-  box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
-  border-radius: 1rem;
-}
-
-.linea {
-  width: 95%;
-  height: 0.1rem;
-  margin: 0 auto;
-  background-color: rgb(215, 215, 215);
-}
-
 /* layoult */
-.contenedor-login {
-  display: flex;
-  flex-direction: column;
-  padding: 2.5rem;
+.prueba {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  color: red;
+  letter-spacing: 1px;
 }
-.contenedor-login .contenedor-Logueo {
-  width: 100%;
-}
-.contenedor-login .img-login {
-  margin: 0 auto;
-  width: 50%;
-  height: 50%;
-}
-.contenedor-login .input-login, .contenedor-login .label-login {
-  width: 90%;
-  margin: 0 2rem;
-}
-.contenedor-login .btn-logueo {
-  width: 80%;
-  margin: 1rem auto;
-  color: #000000;
-}
-.contenedor-login .p-login {
-  margin: 0;
-  text-align: center;
-  font-size: 1.5rem;
-}
-.contenedor-login .btn-crearCuenta {
-  margin: 1rem auto;
-  padding: 0.2rem;
-  width: 80%;
-  border-radius: 0;
-  border: 1px solid rgb(47, 47, 47);
-  box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
-}
-
 .header {
   background-color: rgb(47, 47, 47);
   width: 100%;
@@ -752,6 +687,16 @@ h3 {
   }
 }
 
+.contenido-producto {
+  margin: 3rem auto;
+  padding-bottom: 2rem;
+  width: 90%;
+  height: auto;
+  box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 1rem;
+}
 .contenido-producto h3, .contenido-producto p {
   font-weight: normal;
   color: #000000;
@@ -773,6 +718,12 @@ h3 {
   font-size: 1.5rem;
   color: rgb(112, 112, 112);
 }
+.contenido-producto .linea {
+  width: 95%;
+  height: 0.1rem;
+  margin: 0 auto;
+  background-color: rgb(215, 215, 215);
+}
 
 .DarkMode {
   background-color: rgb(27, 27, 27);
@@ -780,22 +731,14 @@ h3 {
 .DarkMode p, .DarkMode a {
   color: rgb(154, 154, 154);
 }
-.DarkMode h1, .DarkMode h2, .DarkMode h3, .DarkMode h4, .DarkMode label {
+.DarkMode h1, .DarkMode h2, .DarkMode h3, .DarkMode h4 {
   color: #FFFFFF;
 }
 .DarkMode .saludo {
   color: #FFFFFF;
 }
-.DarkMode .input {
-  color: #FFFFFF;
-  background-color: rgb(47, 47, 47);
-}
-.DarkMode button {
-  color: #FFFFFF;
-}
-.DarkMode .input-login {
-  border: none;
-}
-.DarkMode .activo p {
-  color: #fef46D;
+.DarkMode .contenido-producto {
+  box-shadow: -1px 2px 20px 9px rgba(255, 255, 255, 0.06);
+  -webkit-box-shadow: -1px 2px 20px 9px rgba(255, 255, 255, 0.06);
+  -moz-box-shadow: -1px 2px 20px 9px rgba(255, 255, 255, 0.06);
 }
