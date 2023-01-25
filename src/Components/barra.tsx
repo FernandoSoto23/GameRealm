@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
     BrowserRouter as Router,
     Routes as Switch,
@@ -14,6 +15,9 @@ import {
 
 export function Barra(props:any){
 
+    useEffect(()=>{
+        EventListeners();
+    },[]);
     function Escribir(){
         props.texto("hola");
         alert("hola mundo");
@@ -88,10 +92,6 @@ export function Barra(props:any){
             
     );
 }
-
-document.addEventListener('DOMContentLoaded',function(){
-    EventListeners();
-});
 
 function EventListeners(){
     const mobileMenu : any = document.querySelector('.mobile-menu');
