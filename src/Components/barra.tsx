@@ -6,7 +6,7 @@ import {
     NavLink
   } from "react-router-dom";
   import Cookies from "universal-cookie";
-  import { useState } from "react";
+  import { useEffect, useState } from "react";
 
   const imagen = require('../build/img/logo.png') ;
   const despliegue = require('../build/img/menu.png');
@@ -16,10 +16,15 @@ import {
 
 export function Barra(props:any){
 
+    
     const cookies = new Cookies;
     let btnDakMode = cookies.get('DarkMode') === 'Activo';
     const [Check,setCheck] = useState(btnDakMode);
-   
+    
+    useEffect(()=>{
+        EventListeners();
+            EventListeners();
+    },[]);
     
     const darkMode = document.querySelector('body');
     if(cookies.get('DarkMode') === 'Activo'){
@@ -125,9 +130,7 @@ export function Barra(props:any){
     );
 }
 
-document.addEventListener('DOMContentLoaded',function(){
-    EventListeners();
-});
+    
 
 function EventListeners(){
     const mobileMenu : any = document.querySelector('.mobile-menu');
