@@ -16,6 +16,7 @@ import {
 
 export function Barra(props:any){
 
+
     
     const cookies = new Cookies;
     let btnDakMode = cookies.get('DarkMode') === 'Activo';
@@ -47,6 +48,11 @@ export function Barra(props:any){
         }
 
     }
+
+
+    useEffect(()=>{
+        EventListeners();
+    },[]);          
 
     function Escribir(){
         props.texto("hola");
@@ -130,7 +136,7 @@ export function Barra(props:any){
     );
 }
 
-    
+
 
 function EventListeners(){
     const mobileMenu : any = document.querySelector('.mobile-menu');
