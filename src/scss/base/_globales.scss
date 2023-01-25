@@ -42,17 +42,31 @@ h3{
 
 //interfaz
 
+/* Botones */
 .boton{
     padding: 1rem;
     border: none;
     background-color: rgba(255, 0, 0, 0);
-    border: .1rem solid $negro;
+    border-radius: 1rem;
 }
+.boton-verde{
+    background-color: $verde;
+}
+.boton-rojo-amarillo{
+    background-color: rgb(248, 37, 9);
+}
+.boton-amarillo{
+    background-color: $amarillo;
+}
+
+/* Fin Botones */
 .input{
-    border: none; 
+    border: 1px solid $negro; 
     padding: 1rem;
     border-radius: .5rem;
     font-size: 1.5rem;
+    outline: none;
+    
 }
 
 .texto-centrado{
@@ -62,4 +76,22 @@ h3{
 .ajustar-imagen{
     max-width: 100%;
     max-height: 100%;
+}
+
+.card-contenido{
+    margin: 3rem auto;
+    padding-bottom: 2rem;
+    width: 90%;
+    height: auto;
+    box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
+    border-radius: 1rem;
+}
+
+.linea{
+    width: 95%;
+    height: .1rem;
+    margin: 0 auto;
+    background-color: rgb(215, 215, 215);
 }

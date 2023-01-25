@@ -6,6 +6,8 @@ import {
     Link,
     NavLink
   } from "react-router-dom";
+  import Cookies from "universal-cookie";
+  import { useState } from "react";
 
   const imagen = require('../build/img/logo.png') ;
   const despliegue = require('../build/img/menu.png');
@@ -16,8 +18,35 @@ import {
 export function Barra(props:any){
 
     useEffect(()=>{
-        EventListeners();
+            EventListeners();
     },[]);
+
+    const cookies = new Cookies;
+    let btnDakMode = cookies.get('DarkMode') === 'Activo';
+    const [Check,setCheck] = useState(btnDakMode);
+   
+    
+    const darkMode = document.querySelector('body');
+    if(cookies.get('DarkMode') === 'Activo'){
+        darkMode?.classList.add('DarkMode');
+
+    }else{
+        darkMode?.classList.remove('DarkMode');
+    }
+    let variable = 10;
+
+    function DarkMode(){
+        
+        if(Check){
+            cookies.set('DarkMode', 'Desactivo' ,{path:"/"});
+            setCheck(false);
+        }
+        else{
+            cookies.set('DarkMode', 'Activo' ,{path:"/"});
+            setCheck(true);
+        }
+
+    }
     function Escribir(){
         props.texto("hola");
         alert("hola mundo");
@@ -84,6 +113,13 @@ export function Barra(props:any){
                                 <p>Especiales</p>
                             </li>
                         </NavLink>
+                    </ul>
+                    <ul>
+                        <li >
+                            <div className="header-logueo form-check form-switch">
+                                <input checked={Check} className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={DarkMode}/>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 
