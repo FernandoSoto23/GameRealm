@@ -11,6 +11,22 @@ export function Home(){
         <div className=''>
             <h1 className='texto-centrado'>Descarga la APP</h1>
             <img className='ajustar-imagen' src="https://i.ibb.co/3TBrWvj/60c14a43fb4745795b3b358868517e79.png" alt="" />
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            <h1 className='texto-centrado'>Descarga la APP</h1>
+            
         </div>
     );
 }

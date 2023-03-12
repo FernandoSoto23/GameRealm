@@ -1,0 +1,9 @@
+
+
+.card-configuracion{
+    @include tablet(){ 
+        width: 75%;  
+    }
+
+
+}

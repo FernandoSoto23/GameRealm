@@ -20,7 +20,6 @@
     .btn-logueo{
         width: 80%;
         margin: 1rem auto;
-        color: $negro;
     }
     .p-login{
         margin: 0;
@@ -36,6 +35,12 @@
         box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
         -webkit-box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
+    }
+}
+
+@include tablet{
+    .contenedor-login{
+        width: 50%;
     }
 }
 

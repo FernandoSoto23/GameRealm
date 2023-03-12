@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* base */ /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -356,13 +357,14 @@ h3 {
 
 /* Botones */
 .boton {
-  padding: 1rem;
+  padding: 0.5rem;
+  height: 3.5rem;
   border: none;
   background-color: rgba(255, 0, 0, 0);
   border-radius: 1rem;
 }
 
-.boton-verde {
+.boton-azul-verde {
   background-color: #4CB8B3;
 }
 
@@ -370,8 +372,17 @@ h3 {
   background-color: rgb(248, 37, 9);
 }
 
+.boton-rojo {
+  background-color: rgb(248, 37, 9);
+  color: #ededed;
+}
+
 .boton-amarillo {
   background-color: #fef46D;
+}
+
+.boton-largo {
+  width: 90%;
 }
 
 /* Fin Botones */
@@ -403,11 +414,38 @@ h3 {
   border-radius: 1rem;
 }
 
+.card-contenido-personalizado {
+  box-shadow: none;
+  border: 1px solid rgb(170, 170, 170);
+}
+.card-contenido-personalizado .card-header {
+  padding: 1rem;
+  border: 1px solid rgb(170, 170, 170);
+  border-radius: 1rem;
+  background-color: aliceblue;
+  font-weight: 700;
+}
+.card-contenido-personalizado .card-tabla .col {
+  padding: 0.5rem;
+  border: 1px solid rgb(170, 170, 170);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .linea {
   width: 95%;
   height: 0.1rem;
   margin: 0 auto;
-  background-color: rgb(215, 215, 215);
+  background-color: rgb(151, 151, 151);
+}
+
+.list-style-none {
+  list-style: none;
+}
+
+.margin-none {
+  margin: 0;
 }
 
 /* layoult */
@@ -431,7 +469,6 @@ h3 {
 .contenedor-login .btn-logueo {
   width: 80%;
   margin: 1rem auto;
-  color: #000000;
 }
 .contenedor-login .p-login {
   margin: 0;
@@ -449,6 +486,11 @@ h3 {
   -moz-box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
 }
 
+@media (min-width: 768px) {
+  .contenedor-login {
+    width: 50%;
+  }
+}
 .header {
   background-color: rgb(47, 47, 47);
   width: 100%;
@@ -582,44 +624,48 @@ h3 {
 .barra {
   position: sticky;
   top: 0;
-  width: 100%;
   /* Aqui empiezo a editar por ahora */
 }
 @media (min-width: 768px) {
   .barra {
-    background-color: rgb(47, 47, 47);
+    background: rgb(37, 37, 37);
+    border: 1px solid rgb(58, 58, 58);
     margin: 0;
+    height: 90rem;
   }
   .barra .logotipo {
+    border: 1px solid rgb(27, 27, 27);
+  }
+  .barra .logotipo .logo-mobil {
+    display: none;
+  }
+  .barra .logotipo-tablet {
+    display: block;
+    width: 20rem;
+    margin: 0 auto;
+  }
+  .barra .logotipo-tablet img {
     width: 100%;
-    height: 6rem;
-    border: 1px solid rgb(108, 130, 1);
-    text-align: center;
-  }
-  .barra .logotipo img {
-    width: 10rem;
-    height: 10rem;
-  }
-  .barra .barra-botones {
-    display: flex;
-    border: 1px solid rgb(100, 100, 100);
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .barra .barra-botones img {
-    width: 2.5rem;
-    height: 2.5rem;
   }
   .barra .barra-opciones {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 50rem;
-    margin-top: 10rem;
+    margin-top: 30rem;
   }
-  .barra .barra-opciones li {
-    padding: 2rem;
+  .barra .barra-saludo {
+    display: inline-block;
+    width: 100%;
+  }
+  .barra .barra-saludo .carrito {
+    display: none;
+  }
+  .barra .mostrar {
+    visibility: visible;
+    opacity: 1;
+    height: 0;
+  }
+}
+@media (min-width: 992px) {
+  .barra {
+    height: 120rem;
   }
 }
 .barra p {
@@ -651,7 +697,14 @@ h3 {
   height: 3rem;
 }
 
+.logotipo-tablet {
+  display: none;
+}
+
 .barra-opciones {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   background-color: rgb(47, 47, 47);
   visibility: hidden;
   opacity: 0;
@@ -672,16 +725,15 @@ h3 {
 }
 @media (min-width: 768px) {
   .barra-opciones {
-    display: flex;
     opacity: 1;
     visibility: visible;
   }
   .barra-opciones .barra-botones {
-    display: flex;
-    border: 1px solid rgb(100, 100, 100);
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 1rem;
+    justify-content: flex-start;
+    background-color: rgb(42, 42, 42);
   }
   .barra-opciones .barra-botones img {
     width: 2.5rem;
@@ -709,6 +761,34 @@ h3 {
 
 .activo p {
   color: #fef46D;
+}
+
+.barra-inferior {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  background: rgb(242, 250, 138);
+  background: radial-gradient(circle, rgb(128, 128, 128) 0%, rgb(27, 27, 27) 100%);
+  height: 5rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .barra-inferior {
+    display: none;
+  }
+}
+.barra-inferior .carrito {
+  width: 4rem;
+  height: 4rem;
+  border: 1.5px solid black;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+.barra-inferior .carrito img {
+  width: 100%;
 }
 
 .footer {
@@ -752,18 +832,39 @@ h3 {
   }
 }
 
+@media (min-width: 768px) {
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .menu-grid h3 {
+    font-size: 2.5rem;
+  }
+  .menu-grid p {
+    font-size: 1.5rem;
+  }
+  .menu-orden {
+    width: 50%;
+  }
+}
+@media (min-width: 1600px) {
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.contenido-producto {
+  border-radius: 5rem 0rem;
+}
 .contenido-producto h3, .contenido-producto p {
   font-weight: normal;
   color: #000000;
   padding: 0 1rem;
   margin: 0;
 }
-@media (min-width: 768px) {
-  .contenido-producto {
-    margin-top: auto;
-    width: 20rem;
-    height: 20rem;
-  }
+.contenido-producto .boton-largo {
+  margin: 0 1.5rem;
+  border-radius: 5rem 0rem;
 }
 .contenido-producto .span-precio {
   font-weight: 700;
@@ -774,11 +875,56 @@ h3 {
   color: rgb(112, 112, 112);
 }
 
+/* orden */
+.contenedor-contador {
+  display: flex;
+  width: 8rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(167, 166, 166);
+  margin: 1rem;
+}
+
+.btn-numerar {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  border: none;
+  width: 3rem;
+  background-color: rgb(8, 196, 8);
+  border-radius: 0.5rem;
+}
+
+.input-number {
+  width: 3rem;
+  padding: 0.5rem;
+  font-weight: 700;
+}
+
+input.input-number::-webkit-outer-spin-button,
+input.input-number::-webkit-inner-spin-button,
+input.input-number {
+  -webkit-appearance: none;
+}
+
+.añadir-carrito {
+  display: flex;
+  align-items: center;
+}
+
+.ver-mas {
+  font-weight: 700;
+}
+
 .DarkMode {
   background-color: rgb(27, 27, 27);
 }
 .DarkMode p, .DarkMode a {
   color: rgb(154, 154, 154);
+}
+.DarkMode .input-number {
+  color: white;
+  width: 3rem;
+  padding: 0.5rem;
 }
 .DarkMode h1, .DarkMode h2, .DarkMode h3, .DarkMode h4, .DarkMode label {
   color: #FFFFFF;
@@ -798,4 +944,54 @@ h3 {
 }
 .DarkMode .activo p {
   color: #fef46D;
+}
+.DarkMode .card-contenido-personalizado {
+  border: 1px solid rgb(90, 90, 90);
+}
+.DarkMode .card-contenido-personalizado .card-header {
+  background-color: rgb(27, 27, 27);
+  border: 1px solid rgb(90, 90, 90);
+}
+.DarkMode .card-contenido-personalizado .card-tabla .col {
+  border: 1px solid rgb(90, 90, 90);
+}
+.DarkMode .list-group-item {
+  border-radius: 0.5rem;
+  background-color: rgb(47, 47, 47);
+  border: 1px solid rgb(85, 85, 85);
+}
+.DarkMode .boton-amarillo {
+  color: #000000;
+}
+.DarkMode .contenedor-contador {
+  border: 1px solid rgb(47, 47, 47);
+}
+
+@media (min-width: 768px) {
+  .card-configuracion {
+    width: 75%;
+  }
+}
+
+.contenido {
+  height: auto;
+}
+
+.tabla-encabezado {
+  height: 5rem;
+  border: 1px solid rgb(128, 128, 128);
+}
+
+.tabla-carrito-contenido .celda {
+  padding: 1rem;
+  border: 1px solid black;
+  font-weight: 700;
+}
+.tabla-carrito-contenido .celda-boton {
+  text-align: center;
+}
+
+.crearActualizar .campos {
+  display: flex;
+  flex-direction: column;
 }

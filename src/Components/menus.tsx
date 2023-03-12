@@ -27,7 +27,7 @@ export function MenuDinamico(props : any){
         
     },[]);
     async function CrearMenu(){
-        let url = `https://localhost:7092/api/menu/${props.Ruta}?TipoMenu=${props.Tipo}`;
+        let url = `http://25.8.193.19:9095/api/menu/${props.Ruta}?TipoMenu=${props.Tipo}`;
         try{
             let response = await fetch(url);
             if(response.ok){
@@ -43,7 +43,7 @@ export function MenuDinamico(props : any){
         
     }
     return(
-        <>
+        <div className='menu-grid'>
 
             {
                 
@@ -55,8 +55,10 @@ export function MenuDinamico(props : any){
                                 <h3 className='texto-centrado'>{menus.titulo}</h3>
                                 <div className='linea'></div>
                                 <p>Precio: <span className='span-precio'>${menus.precio}</span></p>
-                                <p>{menus.descripcion}</p>
+                                
+                                <p >{menus.descripcion.substring(0,50)} <span className='ver-mas'> ...Ver Mas... </span></p>
                                 <p className='envio'>Costo de envio $20</p>
+                                <input type="submit" value="Seleccionar" className='boton boton-amarillo boton-largo ver-mas'/>
                             </div>
                         </article>
                     </Link>
@@ -64,6 +66,6 @@ export function MenuDinamico(props : any){
 
 
             }
-        </>
+        </div>
     );
 }
