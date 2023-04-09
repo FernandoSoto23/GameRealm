@@ -57,7 +57,7 @@ export function Contenido(){
                     <Route path="/Configuracion" element={<Configuracion/>}> </Route>
                     <Route path="/Carrito" element={<Carrito/>}> </Route>
                     <Route path="/Admin/Panel" element={<Admin/>}> </Route>
-                    <Route path="/Admin/Panel/Crear" element={<Editar />}> </Route>
+                    <Route path="/Admin/Panel/Crear" element={<Editar crear="crear"/>}> </Route>
                     
                     {checar && <Route path={location.pathname} element={<Orden/>}> </Route>}
                     <Route path="/home" element={<Home/>}> </Route>

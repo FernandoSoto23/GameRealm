@@ -2,10 +2,11 @@ import { useState } from "react";
 import { Platillo } from "../clases/platillo";
 
 
-export function Editar(){
+export function Editar(props : any){
     return(
         <>
-            <Crear></Crear>
+            {props.crear === "crear" && <Crear></Crear>}
+            {props.actualizar === "actualizar" && <Crear></Crear>}
         </>
     )
 }
@@ -15,7 +16,9 @@ function Crear(){
     const [precio,setPrecio] = useState(0);
     const [imagen,setImagen] = useState("");
     const [descripcion,setDescripcion] = useState("");
-    
+    const [Errores1,setErrores]: any = useState([]);
+    const [tokenActivo,setTokenActivo]: any = useState([]);
+
     async function Guardar(){
         
         let platillo : Platillo = new Platillo(Number(filtro),titulo,precio,imagen,descripcion);
@@ -36,18 +39,28 @@ function Crear(){
         if(platillo.Descripcion === null || platillo.Descripcion === ""){
             Errores.push("Por favor ingrese una descripcion");
         }
-        
+        setErrores(Errores);
         //SI NO HAY ERRORES AVANZA
-        if(!Errores[0]){
+        const extraerCadena = localStorage.getItem("token");
+        const token = extraerCadena?.replace(/\"/g,''); 
+        const url = `http://25.8.193.19:9095/api/login/validar?token=${token}`;
+        const resp = await fetch(url);
+        const datos = await resp.json();
+        console.log(datos);
+        setTokenActivo(datos);
+
+        if(!Errores[0] && tokenActivo){
+            const url = `http://25.8.193.19:9095/api/menu/Guardar/`;
+           
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(platillo)
             };
-            const url = "";
-            const resp = await fetch(url,requestOptions)
-
-            
+            console.log(requestOptions)
+            const resp = await fetch(url,requestOptions);
+        }else{
+            console.log("El token es falso o hay errores");
         }
     }
 
@@ -76,6 +89,9 @@ function Crear(){
                     <label>Descripcion:</label>
                     <textarea className="textarea" onChange={(e)=>{setDescripcion(e.target.value)}} value={descripcion}></textarea>
                     <input className="boton boton-azul-verde" type="button" onClick={Guardar} value="click"/>
+                    {Errores1.map((e : any)=> <p className="errores texto-centrado">
+                        {e}
+                    </p>)}
                 </fieldset>
 
             </form>
