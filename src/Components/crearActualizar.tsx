@@ -23,7 +23,7 @@ function Crear(props : any){
         
     },[]);
     async function CrearMenu(){
-        let url = `https://localhost:7092/api/menu/platillo${Codigo}`;
+        let url = `https://sekyhwebservice.azurewebsites.net/api/menu/platillo${Codigo}`;
         try{
             let response = await fetch(url);
             if(response.ok){
@@ -82,7 +82,7 @@ function Crear(props : any){
         //SI NO HAY ERRORES AVANZA
         const extraerCadena = localStorage.getItem("token");
         const token = extraerCadena?.replace(/\"/g,''); 
-        const url = `https://localhost:7092/api/login/validar?token=${token}`;
+        const url = `https://sekyhwebservice.azurewebsites.net/api/login/validar?token=${token}`;
         const resp = await fetch(url);
         const datos = await resp.json();
         setTokenActivo(datos);
