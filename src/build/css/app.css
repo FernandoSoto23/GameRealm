@@ -670,7 +670,8 @@ h3 {
 }
 .barra p {
   color: #FFFFFF;
-  margin: 0;
+  font-weight: 700;
+  margin: 0.5rem;
 }
 .barra ul {
   list-style: none;
@@ -857,10 +858,12 @@ h3 {
   border-radius: 5rem 0rem;
 }
 .contenido-producto h3, .contenido-producto p {
-  font-weight: normal;
   color: #000000;
   padding: 0 1rem;
   margin: 0;
+}
+.contenido-producto h3 {
+  font-weight: 700;
 }
 .contenido-producto .boton-largo {
   margin: 0 1.5rem;
@@ -913,6 +916,13 @@ input.input-number {
 
 .ver-mas {
   font-weight: 700;
+}
+
+.imagen-recortada {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+  background-color: black;
 }
 
 .DarkMode {
@@ -973,8 +983,59 @@ input.input-number {
   }
 }
 
+.panel-opciones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+.panel-opciones .boton {
+  width: 10rem;
+  border: 1px solid black;
+}
+.panel-opciones .diseño-select {
+  display: inline-block;
+  width: 50%;
+  cursor: pointer;
+  padding: 7px 10px;
+  height: 42px;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background: #f0f0f0;
+  color: #7b7b7b;
+  font-size: 1em;
+  color: #999;
+  font-family: "Quicksand", sans-serif;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
 .contenido {
-  height: auto;
+  display: flex;
+  justify-content: space-around;
+  height: 5rem;
+}
+.contenido a {
+  width: 30rem;
+  text-align: center;
+}
+.contenido h3 {
+  font-size: 2.5rem;
+  color: #000000;
+  font-weight: 700;
+  margin: 0;
+  padding: 1rem;
+}
+
+.linea-amarilla {
+  margin: 0 auto;
+  height: 0.5rem;
+  width: 100%;
+  background-color: #fef46D;
+  border-radius: 10rem;
 }
 
 .tabla-encabezado {
@@ -982,10 +1043,21 @@ input.input-number {
   border: 1px solid rgb(128, 128, 128);
 }
 
+.titulo {
+  border: 1px solid rgb(128, 128, 128);
+}
+
+.tabla-carrito-contenido .imagen-carrito {
+  width: 20rem;
+  height: 20rem;
+}
 .tabla-carrito-contenido .celda {
   padding: 1rem;
-  border: 1px solid black;
   font-weight: 700;
+}
+.tabla-carrito-contenido .imagen {
+  width: 10rem;
+  height: 10rem;
 }
 .tabla-carrito-contenido .celda-boton {
   text-align: center;
@@ -1002,4 +1074,27 @@ input.input-number {
   height: 2.5rem;
   background-color: red;
   border-radius: 1rem;
+}
+
+.tabla {
+  width: 100%;
+}
+.tabla .celda {
+  border: 1px solid black;
+}
+.tabla .boton {
+  width: 10rem;
+  border: 1px solid black;
+}
+.tabla .celda-dentro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+.tabla .imagen {
+  width: 10rem;
+  height: 10rem;
+  margin: 0 auto;
 }

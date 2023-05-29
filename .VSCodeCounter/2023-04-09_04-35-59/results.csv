@@ -1,0 +1,63 @@
+"filename", "language", "JSON with Comments", "JavaScript", "TypeScript", "JSON", "HTML", "TypeScript JSX", "CSS", "SCSS", "comment", "blank", "total"
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\build\asset-manifest.json", "JSON", 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 17
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\build\bootstrap.bundle.min.js", "JavaScript", 0, 1, 0, 0, 0, 0, 0, 0, 6, 0, 7
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\build\bootstrap.min.css", "CSS", 0, 0, 0, 0, 0, 0, 2, 0, 5, 0, 7
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\build\index.html", "HTML", 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\build\manifest.json", "JSON", 0, 0, 0, 25, 0, 0, 0, 0, 0, 1, 26
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\build\static\css\main.4fe798e3.css", "CSS", 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 2
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\build\static\js\787.3d8f698d.chunk.js", "JavaScript", 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 2
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\build\static\js\main.4bc172cb.js", "JavaScript", 0, 1, 0, 0, 0, 0, 0, 0, 2, 0, 3
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\gulpfile.js", "JavaScript", 0, 16, 0, 0, 0, 0, 0, 0, 0, 2, 18
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\package-lock.json", "JSON", 0, 0, 0, 36833, 0, 0, 0, 0, 0, 1, 36834
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\package.json", "JSON", 0, 0, 0, 54, 0, 0, 0, 0, 0, 1, 55
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\public\bootstrap.bundle.min.js", "JavaScript", 0, 1, 0, 0, 0, 0, 0, 0, 6, 0, 7
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\public\bootstrap.min.css", "CSS", 0, 0, 0, 0, 0, 0, 2, 0, 5, 0, 7
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\public\index.html", "HTML", 0, 0, 0, 0, 25, 0, 0, 0, 1, 4, 30
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\public\manifest.json", "JSON", 0, 0, 0, 25, 0, 0, 0, 0, 0, 1, 26
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\App.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 24, 0, 0, 1, 5, 30
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\Components\admin.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 84, 0, 0, 0, 8, 92
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\Components\barra.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 120, 0, 0, 4, 16, 140
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\Components\barraInferior.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 25, 0, 0, 0, 6, 31
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\Components\carrito.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 39, 0, 0, 0, 5, 44
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\Components\configuracion.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 64, 0, 0, 4, 9, 77
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\Components\contenido.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 84, 0, 0, 0, 15, 99
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\Components\crearActualizar.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 158, 0, 0, 2, 18, 178
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\Components\footer.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 12, 0, 0, 0, 5, 17
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\Components\header.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 29, 0, 0, 1, 13, 43
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\Components\home.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 28, 0, 0, 0, 4, 32
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\Components\login.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 53, 0, 0, 1, 10, 64
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\Components\menus.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 58, 0, 0, 0, 14, 72
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\Components\orden.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 126, 0, 0, 3, 18, 147
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\build\css\app.css", "CSS", 0, 0, 0, 0, 0, 0, 837, 0, 135, 87, 1059
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\build\css\layout\barra.css", "CSS", 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\build\css\layout\crearActualizar.css", "CSS", 0, 0, 0, 0, 0, 0, 11, 0, 0, 1, 12
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\build\css\layout\header.css", "CSS", 0, 0, 0, 0, 0, 0, 42, 0, 0, 0, 42
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\build\css\layout\login.css", "CSS", 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 6
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\build\css\scss\app.css", "CSS", 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 5
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\build\css\scss\layout\login.css", "CSS", 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 5
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\clases\platillo.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 16, 0, 0, 0, 3, 19
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\index.css", "CSS", 0, 0, 0, 0, 0, 0, 12, 0, 0, 2, 14
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 15, 0, 0, 3, 4, 22
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\react-app-env.d.ts", "TypeScript", 0, 0, 3, 0, 0, 0, 0, 0, 1, 2, 6
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\reportWebVitals.ts", "TypeScript", 0, 0, 13, 0, 0, 0, 0, 0, 0, 3, 16
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\app.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 17, 2, 1, 20
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\base\_globales.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 117, 5, 11, 133
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\base\_mixins.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 26, 0, 3, 29
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\base\_normalize.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 146, 129, 74, 349
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\base\_variables.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 13, 3, 2, 18
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\layout\_barra.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 161, 2, 21, 184
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\layout\_carrito.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 20, 0, 5, 25
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\layout\_configuracion.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 5, 0, 5, 10
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\layout\_contenido.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 23, 0, 2, 25
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\layout\_darkMode.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 57, 0, 7, 64
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\layout\_footer.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 24, 0, 4, 28
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\layout\_header.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 123, 2, 13, 138
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\layout\_home.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\layout\_login.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 41, 0, 6, 47
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\layout\_mainApp.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 15, 0, 5, 20
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\layout\_menu.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 83, 1, 8, 92
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\layout\_tablas.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 18, 0, 5, 23
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\scss\layout\crearActualizar.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 13, 0, 3, 16
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\src\setupTests.ts", "TypeScript", 0, 0, 1, 0, 0, 0, 0, 0, 4, 1, 6
+"c:\Users\Fernando\Documents\GitHub\App-Restaurante-React-ts\tsconfig.json", "JSON with Comments", 26, 0, 0, 0, 0, 0, 0, 0, 0, 1, 27
+"Total", "-", 26, 20, 17, 36954, 26, 935, 926, 902, 330, 439, 40575

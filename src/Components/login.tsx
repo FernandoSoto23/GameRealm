@@ -6,30 +6,47 @@ import any from "react/jsx-runtime";
 export function Login(props : any){
     const [user,setUser] = useState();
     const [pwd,setPwd] = useState();
+    const [admin,setAdmin] = useState(props.admin ?? false);
+    console.log(admin)
     async function loguear(){
-
-        let url = (`http://25.8.193.19:9095/api/login/loguear?email=${user}&pwd=${pwd}`);
-        
-        let resp = await fetch(url);
-        let datos = await resp.json();
-
-       
-        if(datos.msg === 'ok'){
-            localStorage.setItem('id',datos.dato.id);
-            localStorage.setItem('nombre',datos.dato.nombre);
-            localStorage.setItem('usuario',datos.dato.nombreUsuario);
-            localStorage.setItem('token',JSON.stringify(datos.dato.token));
-            window.location.href = "./home";
+        //LOGUEA AL ADMIN
+        if(admin){
+            let url = (`https://sekyhwebservice.azurewebsites.net/api/login/admin?email=${user}&pwd=${pwd}`);
+            let resp = await fetch(url);
+            let datos = await resp.json();
+            if(datos.msg === 'ok'){
+                localStorage.setItem('id',datos.dato.id);
+                localStorage.setItem('nombre',datos.dato.nombre);
+                localStorage.setItem('usuario',datos.dato.nombreUsuario);
+                localStorage.setItem('token',JSON.stringify(datos.dato.token));
+                localStorage.setItem('admin',JSON.stringify(datos.dato.admin));
+                window.location.href = "./panel";
+            }else{
+                alert("error");
+            }
         }else{
-            alert("error");
+            //LOGUEA AL USUARIO NORMAL
+            let url = (`https://sekyhwebservice.azurewebsites.net/api/login/loguear?email=${user}&pwd=${pwd}`);
+            let resp = await fetch(url);
+            let datos = await resp.json();
+            if(datos.msg === 'ok'){
+                localStorage.setItem('id',datos.dato.id);
+                localStorage.setItem('nombre',datos.dato.nombre);
+                localStorage.setItem('usuario',datos.dato.nombreUsuario);
+                localStorage.setItem('token',JSON.stringify(datos.dato.token));
+                window.location.href = "./home";
+            }else{
+                alert("error");
+            }
         }
+
     }   
+
     useEffect(()=>{
         if(localStorage.getItem('id'))
-        window.location.href = "./home";
+            window.location.href = "./home";
     },[]);
     //para logueo de admin
-    let admin = props.admin ?? false;
 
     return(
         <div className="contenedor card-contenido contenedor-login">
@@ -56,6 +73,7 @@ export function Login(props : any){
             }
             {admin == true &&
                 <>
+                    <button type="submit" onClick={loguear} className="boton boton-amarillo btn-logueo">Iniciar Sesion</button>
                     <p>Estas en el modo Administrador, Inicia Sesion Para Administrar la Aplicacion</p>
                 </>
             }

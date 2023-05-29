@@ -1,21 +1,18 @@
 
 import { useEffect, useState } from 'react';
-import { Link, useLocation} from 'react-router-dom';
-import { domainToASCII } from 'url';
-
-
-const imagen = require('../build/img/muestra.png') ;
+import { Link} from 'react-router-dom';
 
 export function Menu(props : any){
-    
+    const { RUTA } = process.env;
+    console.log(RUTA);
     return(
         <>
-            {props.Tipo == 1 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
-            {props.Tipo == 2 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
-            {props.Tipo == 3 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
-            {props.Tipo == 4 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
-            {props.Tipo == 5 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
-            {props.Tipo == 6 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
+            {props.Tipo === 1 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
+            {props.Tipo === 2 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
+            {props.Tipo === 3 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
+            {props.Tipo === 4 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
+            {props.Tipo === 5 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
+            {props.Tipo === 6 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
         </>
     );
 }
@@ -24,10 +21,9 @@ export function MenuDinamico(props : any){
     const [Menu,SetMenu] = useState([{"codigo":"","titulo":"","descripcion":"","imagen":"","precio":""}]);
     useEffect(()=>{
         CrearMenu();
-        
     },[]);
     async function CrearMenu(){
-        let url = `http://25.8.193.19:9095/api/menu/${props.Ruta}?TipoMenu=${props.Tipo}`;
+        let url = `https://sekyhwebservice.azurewebsites.net/api/menu/${props.Ruta}?TipoMenu=${props.Tipo}`;
         try{
             let response = await fetch(url);
             if(response.ok){
@@ -36,6 +32,7 @@ export function MenuDinamico(props : any){
                 console.log('Respuesta de red OK pero respuesta de HTTP no OK');
             }
             let datos = await response.json();
+
             SetMenu(datos);
         }catch( error : any){
             console.log('Hubo un problema con la petición Fetch:' + error.message);
@@ -51,7 +48,7 @@ export function MenuDinamico(props : any){
                     <Link to={`./Orden?codigo=${menus.codigo}`} key={ menus.codigo }>
                         <article className='card-contenido contenido-producto'>
                             <div>
-                                <img className='ajustar-imagen' src={menus.imagen} alt="..." />
+                                <img className='ajustar-imagen imagen-recortada' src={menus.imagen} alt="..." />
                                 <h3 className='texto-centrado'>{menus.titulo}</h3>
                                 <div className='linea'></div>
                                 <p>Precio: <span className='span-precio'>${menus.precio}</span></p>

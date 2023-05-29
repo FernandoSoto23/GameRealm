@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { json } from "stream/consumers";
 import Swal from 'sweetalert2';
 
 
@@ -30,7 +29,7 @@ export function Orden(props : any){
         setContador( contador - 1 )
     }
     async function OrdenPlatillo(){
-        let url = `http://25.8.193.19:9095/api/menu/platillo${Codigo}`;
+        let url = `https://sekyhwebservice.azurewebsites.net/api/menu/platillo${Codigo}`;
         let resp = await fetch(url);
         let datos = await resp.json();
         
@@ -52,6 +51,7 @@ export function Orden(props : any){
                 "codigo" : codigo,
                 "titulo": titulo, 
                 "cantidad": contador,
+                "imagen" : imagen,
                 "precio": precio
             }
         ];
@@ -89,7 +89,7 @@ export function Orden(props : any){
         }
         
          if(!existe){
-            JsonParam.push({"codigo": codigo,"titulo":titulo,"cantidad" : contador,"precio":precio});
+            JsonParam.push({"codigo": codigo,"titulo":titulo,"cantidad" : contador,"imagen": imagen,"precio":precio});
             localStorage.setItem("carrito" , JSON.stringify(JsonParam))
             
             Alerta(true,"Se añadio Correctamente");

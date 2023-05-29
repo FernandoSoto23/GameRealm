@@ -24,10 +24,12 @@
 .contenido-producto{
     border-radius: 5rem 0rem;
     h3,p{
-        font-weight: normal;
         color: $negro;
         padding: 0 1rem;
         margin: 0;
+    }
+    h3{
+        font-weight: $bold;
     }
     .boton-largo{
         margin: 0 1.5rem;
@@ -81,4 +83,10 @@ input.input-number{
 }
 .ver-mas{
     font-weight: $bold;
+}
+.imagen-recortada{
+    width: 500px;
+	height: 300px;
+	object-fit: cover;
+	background-color: black;
 }
