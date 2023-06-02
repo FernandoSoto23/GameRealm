@@ -7,7 +7,6 @@ import { SanitizarDatosString,SanitizarDatosInt, Auth} from "../clases/metodosGl
 
 export function Editar(props : any){
 
-    const [tokenActivo,setTokenActivo]: any = useState([]);
 
     useEffect(()=>{
         Auth("../../home","admin");
@@ -143,7 +142,9 @@ function Crear(props : any){
                                 'success'
                             )
                         });
-
+                        setTimeout(()=>{
+                            window.location.href = "../panel";
+                          },1500);
                     }
                 })
                 

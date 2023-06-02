@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import any from "react/jsx-runtime";
 import {WebServiceUrl} from '../clases/rutas';
 import { Auth } from "../clases/metodosGlobales";
-  const imagen = require('../build/img/logo.png') ;
+const imagen = require('../build/img/logo.png') ;
 
 export function Login(props : any){
     const [user,setUser] = useState();
