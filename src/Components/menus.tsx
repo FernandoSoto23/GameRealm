@@ -18,6 +18,7 @@ export function Menu(props : any){
 
 export function MenuDinamico(props : any){
     const [Menu,SetMenu] = useState([{"codigo":"","titulo":"","descripcion":"","imagen":"","precio":""}]);
+
     useEffect(()=>{
         CrearMenu();
     },[]);

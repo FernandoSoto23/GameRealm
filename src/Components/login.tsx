@@ -43,7 +43,7 @@ export function Login(props : any){
     }   
 
     useEffect(()=>{
-        debugger
+        
         if(admin){
             Auth("../admin/panel");
         }else{

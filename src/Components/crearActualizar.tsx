@@ -3,8 +3,15 @@ import { Platillo } from "../clases/platillo";
 import { Link, useLocation } from "react-router-dom";
 import Swal from 'sweetalert2';
 import {WebServiceUrl} from '../clases/rutas';
-import { SanitizarDatosString,SanitizarDatosInt} from "../clases/metodosGlobales";
+import { SanitizarDatosString,SanitizarDatosInt, Auth} from "../clases/metodosGlobales";
+
 export function Editar(props : any){
+
+    const [tokenActivo,setTokenActivo]: any = useState([]);
+
+    useEffect(()=>{
+        Auth("../../home","admin");
+    },[])
     return(
         <>
             {props.crear === 1 && <Crear></Crear>}
@@ -23,21 +30,14 @@ function Crear(props : any){
     const [imagen,setImagen] = useState("");
     const [descripcion,setDescripcion] = useState("");
     const [ErroresPantalla,setErroresPantalla]: any = useState([]);
-    const [tokenActivo,setTokenActivo]: any = useState([]);
+ 
     const [boton,setBotonActivo] = useState(true);
     const [accionActualizar,setAccionActualizar] = useState(false);
-    const VerificarToken = async ()=>{
-        const extraerCadena = localStorage.getItem("token");
-        const token = extraerCadena?.replace(/\"/g,''); 
-        const url = `${WebServiceUrl}/api/login/validar?token=${token}`;
-        const resp = await fetch(url);
-        const datos = await resp.json();
-        setTokenActivo(datos);
-    }
+
     let Url = useLocation();
     let Codigo = Url.search;
     useEffect(()=>{
-        //Llamamos la FUNCION para VALIDAR el token de ADMINISTRADOR
+        
        
         if(props.accion === 1){
             CrearMenu();
@@ -75,7 +75,7 @@ function Crear(props : any){
         }
     }
     async function Guardar(){
-        VerificarToken();
+
         var platillo : Platillo = new Platillo(filtro,codigo,titulo,precio,imagen,descripcion);
         let Errores : string[] = [];
         //Vamos a SANITIZAR los datos PARA evitar Inyeccion SQL
@@ -104,7 +104,7 @@ function Crear(props : any){
         //SI NO HAY ERRORES AVANZA
         //Si props.accion es 1 Es la ACCION de ACTUALIZAR si no es la ACCION de CREAR
         
-        if(!Errores[0] && tokenActivo){
+        if(!Errores[0]){
 
             const id = localStorage.getItem("id");
             const extraerCadena = localStorage.getItem("token");
@@ -120,12 +120,12 @@ function Crear(props : any){
                 token : token,
                 menu : platillo
            }
-            const requestOptions = {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(construirJson) ?? undefined
-            };    
            if(props.accion === 1){
+                const requestOptions = {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(construirJson) ?? undefined
+                };    
                 Swal.fire({
                     title: 'Esta seguro?',
                     text: "Desea Remplazar el Platillo?",
@@ -148,7 +148,13 @@ function Crear(props : any){
                 })
                 
                 return;
-           }
+           }else{
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(construirJson) ?? undefined
+            };   
+            
             FetchAnuncio(url,requestOptions).then((result)=>{
                 if(result){
                     Swal.fire({
@@ -171,6 +177,8 @@ function Crear(props : any){
                       })
                 }
             });
+           }
+            
            
         }else{
             console.log("El token es falso o hay errores");

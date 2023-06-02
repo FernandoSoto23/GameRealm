@@ -31,17 +31,26 @@ export function SanitizarDatosInt(data : number) {
     return datosSanitizados;
 }
 
-export const Auth = async (ruta: string)=>{
+export const Auth = async (ruta: string,admin : string = "")=>{
   try{
-      const token = JSON.parse(localStorage.getItem("token") ?? "0");
-      const url = `${WebServiceUrl}/api/login/Auth?token=${token}`;
-      const resp = await fetch(url);
-      const datos = await resp.json();
+    const token = JSON.parse(localStorage.getItem("token") ?? "0");
+    const url = `${WebServiceUrl}/api/login/Auth?token=${token}`;
+    const resp = await fetch(url);
+    const datos = await resp.json();
+    if(admin = "admin"){
+      if(datos.msg !== 'ok'){
+        window.location.href = ruta;
+      }else{
+        console.log("usuario logueado");
+      }
+    }else{
       if(datos.msg === 'ok'){
-          window.location.href = ruta;
+        window.location.href = ruta;
       }else{
         console.log("usuario no logueado");
       }
+    }
+
   }catch(error){
       console.log("Se encontro el siguiente error" + error);
   }
