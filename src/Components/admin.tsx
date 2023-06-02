@@ -1,15 +1,32 @@
-import { link } from "fs";
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import {WebServiceUrl} from '../clases/rutas';
 
 export function Admin(){
+    const Auth = async ()=>{
+        try{
+            const token = JSON.parse(localStorage.getItem("token") ?? "0");
+            const url = `${WebServiceUrl}/api/login/Auth?token=${token}`;
+            const resp = await fetch(url);
+            const datos = await resp.json();
+            if(datos.msg !== 'ok'){
+                window.location.href = "../home";
+            }else{
+                setMostrarPag(true);
+                console.log("Respuesta Htpp 200");
+            }
+        }catch(error){
+            console.log("Se encontro el siguiente error" + error);
+        }
+
+    }    
     
 
-
-    const [filtro,setFiltro] =useState("");
+    const [filtro,setFiltro] = useState("");
     const [datos,setDatos] : any =useState();
     const [mostrarPag,setMostrarPag] = useState(false);
+    
     useEffect(()=>{
         Auth();
     },[]);
@@ -18,7 +35,7 @@ export function Admin(){
         if(filtro === "0" || filtro === ""){
             return;
         }
-        const url = `https://sekyhwebservice.azurewebsites.net/api/menu/listarxtipo?tipomenu=${filtro}`;
+        const url = `${WebServiceUrl}/api/menu/listarxtipo?tipomenu=${filtro}`;
         try{
             let response = await fetch(url);
             if(response.ok){
@@ -27,31 +44,17 @@ export function Admin(){
                 console.log('Respuesta de red OK pero respuesta de HTTP no OK');
             }
             let arregloObjetos = await response.json();
-            console.log(arregloObjetos);
+            
             setDatos(arregloObjetos);
         }
         catch(error : any){
             console.log('Hubo un problema con la petición Fetch:' + error.message);
         }
     }
-    const Auth = async ()=>{
-        const token = JSON.parse(localStorage.getItem("token") ?? "null");
-        console.log(token)
-        let url = (`https://sekyhwebservice.azurewebsites.net/api/login/Auth?token=${token}`);
-        let resp = await fetch(url);
-        let datos = await resp.json();
-        if(datos.msg !== 'ok'){
-            window.location.href = "../home";
-        }else{
-            setMostrarPag(true);
-        }
-    }    
+
     return(
         <>
         {mostrarPag &&
-        
-        
-
         <div className="card-contenido">
             
             <h2 className="texto-centrado">Panel De Control</h2>

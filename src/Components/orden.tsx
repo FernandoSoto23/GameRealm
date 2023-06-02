@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Swal from 'sweetalert2';
-
+import {WebServiceUrl} from '../clases/rutas';
 
 
 export function Orden(props : any){
@@ -29,7 +29,7 @@ export function Orden(props : any){
         setContador( contador - 1 )
     }
     async function OrdenPlatillo(){
-        let url = `https://sekyhwebservice.azurewebsites.net/api/menu/platillo${Codigo}`;
+        let url = `${WebServiceUrl}/api/menu/platillo${Codigo}`;
         let resp = await fetch(url);
         let datos = await resp.json();
         
@@ -80,7 +80,7 @@ export function Orden(props : any){
     
     function AddCarrito(JsonParam : any){
         let existe : boolean = false;
-        console.log(JsonParam.length);
+        
         for(let i = 0; i < JsonParam.length; i++){
             
             if(JsonParam[i]["codigo"] === codigo){

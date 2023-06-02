@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import any from "react/jsx-runtime";
-
+import {WebServiceUrl} from '../clases/rutas';
+import { Auth } from "../clases/metodosGlobales";
   const imagen = require('../build/img/logo.png') ;
 
 export function Login(props : any){
     const [user,setUser] = useState();
     const [pwd,setPwd] = useState();
     const [admin,setAdmin] = useState(props.admin ?? false);
-    console.log(admin)
     async function loguear(){
         //LOGUEA AL ADMIN
         if(admin){
-            let url = (`https://sekyhwebservice.azurewebsites.net/api/login/admin?email=${user}&pwd=${pwd}`);
+            let url = (`${WebServiceUrl}/api/login/admin?email=${user}&pwd=${pwd}`);
             let resp = await fetch(url);
             let datos = await resp.json();
             if(datos.msg === 'ok'){
@@ -20,13 +20,13 @@ export function Login(props : any){
                 localStorage.setItem('usuario',datos.dato.nombreUsuario);
                 localStorage.setItem('token',JSON.stringify(datos.dato.token));
                 localStorage.setItem('admin',JSON.stringify(datos.dato.admin));
-                window.location.href = "./panel";
+                window.location.href = "../panel";
             }else{
                 alert("error");
             }
         }else{
             //LOGUEA AL USUARIO NORMAL
-            let url = (`https://sekyhwebservice.azurewebsites.net/api/login/loguear?email=${user}&pwd=${pwd}`);
+            let url = (`${WebServiceUrl}/api/login/loguear?email=${user}&pwd=${pwd}`);
             let resp = await fetch(url);
             let datos = await resp.json();
             if(datos.msg === 'ok'){
@@ -43,8 +43,13 @@ export function Login(props : any){
     }   
 
     useEffect(()=>{
-        if(localStorage.getItem('id'))
-            window.location.href = "./home";
+        if(admin){
+            Auth("../admin/panel").then(()=>{return});
+        }else{
+            if(localStorage.getItem('id'))
+            window.location.href = "./home";     
+        }
+        
     },[]);
     //para logueo de admin
 

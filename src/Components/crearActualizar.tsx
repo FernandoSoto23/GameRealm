@@ -1,8 +1,9 @@
 import { useState,useEffect } from "react";
 import { Platillo } from "../clases/platillo";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Swal from 'sweetalert2';
-
+import {WebServiceUrl} from '../clases/rutas';
+import { SanitizarDatosString,SanitizarDatosInt} from "../clases/metodosGlobales";
 export function Editar(props : any){
     return(
         <>
@@ -11,60 +12,80 @@ export function Editar(props : any){
         </>
     )
 }
+
+
 function Crear(props : any){
-    let Url = useLocation();
-    let Codigo = Url.search;
 
-    useEffect(()=>{
-        
-        if(props.accion === 1){
-            CrearMenu();
-        }
-        
-    },[]);
-    async function CrearMenu(){
-        let url = `https://sekyhwebservice.azurewebsites.net/api/menu/platillo${Codigo}`;
-        try{
-            let response = await fetch(url);
-            if(response.ok){
-                console.log("La respuesta fue buena");
-            }else {
-                console.log('Respuesta de red OK pero respuesta de HTTP no OK');
-            }
-            let datos = await response.json();
-            console.log(datos)
-            setFiltro(datos.tipoMenu);
-            setCodigo(datos.codigo);
-            setTitulo(datos.titulo);
-            setImagen(datos.imagen);
-            setDescripcion(datos.descripcion);
-            setPrecio(datos.precio);
-        }catch( error : any){
-            console.log('Hubo un problema con la petición Fetch:' + error.message);
-        }
-        
-    }
-
-    const [filtro,setFiltro] =useState("");
-    const [codigo,setCodigo] =useState("");
+    const [filtro,setFiltro] =useState(0);
+    const [codigo,setCodigo] =useState(0);
     const [titulo,setTitulo] = useState("");
     const [precio,setPrecio] = useState(0);
     const [imagen,setImagen] = useState("");
     const [descripcion,setDescripcion] = useState("");
-    const [Errores1,setErrores]: any = useState([]);
+    const [ErroresPantalla,setErroresPantalla]: any = useState([]);
     const [tokenActivo,setTokenActivo]: any = useState([]);
+    const [boton,setBotonActivo] = useState(true);
+    const [accionActualizar,setAccionActualizar] = useState(false);
+    const VerificarToken = async ()=>{
+        const extraerCadena = localStorage.getItem("token");
+        const token = extraerCadena?.replace(/\"/g,''); 
+        const url = `${WebServiceUrl}/api/login/validar?token=${token}`;
+        const resp = await fetch(url);
+        const datos = await resp.json();
+        setTokenActivo(datos);
+    }
+    let Url = useLocation();
+    let Codigo = Url.search;
+    useEffect(()=>{
+        //Llamamos la FUNCION para VALIDAR el token de ADMINISTRADOR
+       
+        if(props.accion === 1){
+            CrearMenu();
+            setAccionActualizar(true);
+        }
+        
+    },[]);
 
+
+    async function CrearMenu() {
+        const url = `${WebServiceUrl}/api/menu/platillo${Codigo}`;
+        await fetch(url).then((resp)=>{
+            resp.json().then((datos)=>{
+                setFiltro(datos.tipoMenu);
+                setCodigo(datos.codigo);
+                setTitulo(datos.titulo);
+                setPrecio(datos.precio);
+                setImagen(datos.imagen);
+                setDescripcion(datos.descripcion);
+            });
+        });
+    }
+    
+
+    const FetchAnuncio = async (url : string,requestOptions : object) =>{
+        const resp = await fetch(url,requestOptions); 
+        let result;
+        if(resp.status === 200){
+            setBotonActivo(false);
+            console.log("La creacion del anuncio fue un exito");
+            return result = true;
+        }else{
+            console.log("El fetch del anuncio no jalo");
+            return result = false;
+        }
+    }
     async function Guardar(){
-        
-        let platillo : Platillo = new Platillo(Number(filtro),codigo,titulo,precio,imagen,descripcion);
+        VerificarToken();
+        var platillo : Platillo = new Platillo(filtro,codigo,titulo,precio,imagen,descripcion);
         let Errores : string[] = [];
-        //validar errores
-        
+        //Vamos a SANITIZAR los datos PARA evitar Inyeccion SQL
+        platillo.Titulo = SanitizarDatosString(titulo);
+        platillo.Precio = SanitizarDatosInt(precio);
+        platillo.Imagen = SanitizarDatosString(imagen);
+        platillo.Descripcion = SanitizarDatosString(descripcion);
+        //VALIDACION DE ERRORES
         if(platillo.TipoMenu === null || platillo.TipoMenu === 0){
             Errores.push("Seleccione una opcion");
-        }
-        if(platillo.Codigo === null || platillo.Codigo === ""){
-            Errores.push("Ingrese un codigo");
         }
         if(platillo.Titulo === null || platillo.Titulo === ""){
             Errores.push("Por favor ingrese un titulo");
@@ -78,28 +99,32 @@ function Crear(props : any){
         if(platillo.Descripcion === null || platillo.Descripcion === ""){
             Errores.push("Por favor ingrese una descripcion");
         }
-        setErrores(Errores);
+        setErroresPantalla(Errores);
+
         //SI NO HAY ERRORES AVANZA
-        const extraerCadena = localStorage.getItem("token");
-        const token = extraerCadena?.replace(/\"/g,''); 
-        const url = `https://sekyhwebservice.azurewebsites.net/api/login/validar?token=${token}`;
-        const resp = await fetch(url);
-        const datos = await resp.json();
-        setTokenActivo(datos);
-
-
+        //Si props.accion es 1 Es la ACCION de ACTUALIZAR si no es la ACCION de CREAR
+        
         if(!Errores[0] && tokenActivo){
-            let url = `https://sekyhwebservice.azurewebsites.net/api/menu/guardar/`;
-           if(props.accion === 1){
-            url = `https://sekyhwebservice.azurewebsites.net/api/menu/actualizar/`;
+
+            const id = localStorage.getItem("id");
+            const extraerCadena = localStorage.getItem("token");
+            const token = extraerCadena?.replace(/\"/g,''); 
+            
+            let url = `${WebServiceUrl}/api/menu/guardar/`;
+
+           if(props.accion === 1)
+                url = `${WebServiceUrl}/api/menu/actualizar?codigo=${platillo.Codigo}`;
+           
+           const construirJson = {
+                id : id,
+                token : token,
+                menu : platillo
            }
             const requestOptions = {
-                method: 'POST',
+                method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(platillo)
-            };
-           
-           
+                body: JSON.stringify(construirJson) ?? undefined
+            };    
            if(props.accion === 1){
                 Swal.fire({
                     title: 'Esta seguro?',
@@ -111,61 +136,86 @@ function Crear(props : any){
                     confirmButtonText: 'Si, Remplazalo!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        fetch(url,requestOptions);
+                        FetchAnuncio(url,requestOptions).then((result)=>{
+                            Swal.fire(
+                                'Remplazado!',
+                                'Tu archivo ha sido Actualizado.',
+                                'success'
+                            )
+                        });
 
-                    Swal.fire(
-                        'Remplazado!',
-                        'Tu archivo ha sido Actualizado.',
-                        'success'
-                    )
                     }
                 })
                 
                 return;
            }
-           await fetch(url,requestOptions);
-           Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'El platillo fue guardado exitosamente',
-            showConfirmButton: false,
-            timer: 1500
-          })
-            
+            FetchAnuncio(url,requestOptions).then((result)=>{
+                if(result){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'El platillo fue guardado exitosamente',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                      setTimeout(()=>{
+                        window.location.href = "../panel";
+                      },1500);
+                }else{
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        title: 'Hay un error interno,Consulta al programador para mas detalles',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }
+            });
+           
         }else{
             console.log("El token es falso o hay errores");
         }
     }
-
     return(
         <div className="card-contenido">
         <h2 className="texto-centrado">Crear o Actualizar Anuncio</h2>
+        
+        <Link to={"../admin/panel"} className="input margin-10 boton-amarillo">Regresar</ Link>
+       
+        
             <form className="crearActualizar">
                 <fieldset className="campos">
                     <legend>Informacion Del Nuevo Platillo</legend>
-                    <label>Tipo de Menu:</label>
-                    <select onChange={(e)=>{setFiltro(e.target.value)}} value={filtro}>
-                        <option value="0">--Seleccione--</option>
-                        <option value="1">Comida Rapida</option>
-                        <option value="2">Ensaladas</option>
-                        <option value="3">Desayunos</option>
-                        <option value="4">Bebidas</option>
-                        <option value="5">Postres</option>
-                        <option value="6">Especiales</option>
-                    </select>
-                    <label>Codigo:</label>
-                    <input className="input input-titulo" type="text" onChange={(e)=>{setCodigo(e.target.value)}} value={codigo}/>
-                    <label>Titulo:</label>
-                    <input className="input input-titulo" type="text" onChange={(e)=>{setTitulo(e.target.value)}} value={titulo}/>
-                    <label>Precio:</label>
-                    <input className="input input-precio" type="number" min={0} onChange={(e:any)=>{setPrecio(e.target.value)}} value={precio}/>
-                    <label >Imagen:</label>
-                    <input className="input " type="text" placeholder="Pega la url de la imagen" onChange={(e)=>{setImagen(e.target.value)}} value={imagen}></input>
-                    <label>Descripcion:</label>
-                    <textarea className="textarea" onChange={(e)=>{setDescripcion(e.target.value)}} value={descripcion}></textarea>
-                    <input className="boton boton-azul-verde" type="button" onClick={Guardar} value="Enter"/>
+                        <label>Tipo de Menu:</label>
+                        <select onChange={(e)=>{setFiltro(Number(e.target.value))}} value={filtro}>
+                            <option value="0">--Seleccione--</option>
+                            <option value="1">Comida Rapida</option>
+                            <option value="2">Ensaladas</option>
+                            <option value="3">Desayunos</option>
+                            <option value="4">Bebidas</option>
+                            <option value="5">Postres</option>
+                            <option value="6">Especiales</option>
+                        </select>
+                        <label>Titulo:</label>
+                        <input className="input input-titulo" type="text" onChange={(e)=>{setTitulo(e.target.value)}} value={titulo}/>
+                        <label>Precio:</label>
+                        <input className="input input-precio" type="number" min={0} onChange={(e:any)=>{setPrecio(Number(e.target.value))}} value={precio}/>
+                        <label >Imagen:</label>
+                        <input className="input " type="text" placeholder="Pega la url de la imagen" onChange={(e)=>{setImagen(e.target.value)}} value={imagen}></input>
+                        <label>Descripcion:</label>
+                        <textarea className="textarea" onChange={(e)=>{setDescripcion(e.target.value)}} value={descripcion}></textarea>
+                       
                     {
-                    Errores1.map((e : any)=> 
+                        props.accion === 1 && boton && 
+                        <input className="boton boton-azul-verde" type="button" onClick={Guardar} value="Actualizar Anuncio"/>
+                    }
+                    {
+                        props.accion === undefined && boton && 
+                        <input className="boton boton-azul-verde" type="button" onClick={Guardar} value="Crear Nuevo Anuncio"/>
+                    }
+
+                    {
+                    ErroresPantalla.map((e : any)=> 
                     <p className="errores texto-centrado">
                         {e}
                     </p>)

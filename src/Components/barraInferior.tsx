@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export function BarraInferior(){
     let carrito = JSON.parse(localStorage.getItem("carrito") ?? "0").length;
-    console.log();
+    
     return(
         
         <div className="barra-inferior">

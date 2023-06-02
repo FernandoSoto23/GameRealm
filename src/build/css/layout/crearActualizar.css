@@ -1,3 +1,6 @@
+.crearActualizar {
+  margin: 2rem;
+}
 .crearActualizar .campos {
   display: flex;
   flex-direction: column;

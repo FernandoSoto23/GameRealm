@@ -1,10 +1,9 @@
 
 import { useEffect, useState } from 'react';
 import { Link} from 'react-router-dom';
+import {WebServiceUrl} from '../clases/rutas';
 
 export function Menu(props : any){
-    const { RUTA } = process.env;
-    console.log(RUTA);
     return(
         <>
             {props.Tipo === 1 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
@@ -23,7 +22,7 @@ export function MenuDinamico(props : any){
         CrearMenu();
     },[]);
     async function CrearMenu(){
-        let url = `https://sekyhwebservice.azurewebsites.net/api/menu/${props.Ruta}?TipoMenu=${props.Tipo}`;
+        let url = `${WebServiceUrl}/api/menu/${props.Ruta}?TipoMenu=${props.Tipo}`;
         try{
             let response = await fetch(url);
             if(response.ok){

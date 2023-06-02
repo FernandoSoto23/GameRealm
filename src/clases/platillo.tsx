@@ -2,13 +2,13 @@
 
 export class Platillo{
     public TipoMenu : number;
-    public Codigo : string;
+    public Codigo : number;
     public Titulo : string; 
     public Precio : number;
     public Imagen : string;
     public Descripcion : string;
     
-    constructor(filtro : number, codigo : string,titulo : string,precio : number,imagen:string,descripcion:string){
+    constructor(filtro : number, codigo : number,titulo : string,precio : number,imagen:string,descripcion:string){
         this.TipoMenu = filtro;
         this.Codigo = codigo;
         this.Titulo = titulo;
