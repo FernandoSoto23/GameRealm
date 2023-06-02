@@ -40,7 +40,7 @@ export const Auth = async (ruta: string)=>{
       if(datos.msg === 'ok'){
           window.location.href = ruta;
       }else{
-        window.location.href = "../home";
+        console.log("usuario no logueado");
       }
   }catch(error){
       console.log("Se encontro el siguiente error" + error);

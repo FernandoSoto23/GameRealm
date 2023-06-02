@@ -43,11 +43,12 @@ export function Login(props : any){
     }   
 
     useEffect(()=>{
+        debugger
         if(admin){
-            Auth("../admin/panel").then(()=>{return});
+            Auth("../admin/panel");
         }else{
             if(localStorage.getItem('id'))
-            window.location.href = "./home";     
+                window.location.href = "./home";     
         }
         
     },[]);
