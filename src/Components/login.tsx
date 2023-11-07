@@ -4,9 +4,10 @@ import { Auth } from "../clases/metodosGlobales";
 const imagen = require('../build/img/logo.png') ;
 
 export function Login(props : any){
+    const { administrador } = props;
     const [user,setUser] = useState();
     const [pwd,setPwd] = useState();
-    const [admin,setAdmin] = useState(props.admin ?? false);
+    const [admin,setAdmin] = useState(administrador ?? false);
     async function loguear(){
         //LOGUEA AL ADMIN
         if(admin){

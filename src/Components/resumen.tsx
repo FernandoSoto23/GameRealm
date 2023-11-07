@@ -2,8 +2,8 @@
 
 const Resumen = ()=>{
     return(
-        <div>
-            <h1>Resumen</h1>
+        <div className="containerResumen">
+            <h2 className="text-center">Resumen</h2>
             <p>Subtotal</p>
             <p>envio</p>
             <p>seguro envio</p>

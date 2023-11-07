@@ -1105,3 +1105,9 @@ input.input-number {
   height: 10rem;
   margin: 0 auto;
 }
+
+.containerResumen {
+  border: 1px solid black;
+  width: 72rem;
+  margin: 0 auto;
+}

@@ -4,26 +4,28 @@ import { Link} from 'react-router-dom';
 import {WebServiceUrl} from '../clases/rutas';
 
 export function Menu(props : any){
+    const {Tipo} = props;
     return(
         <>
-            {props.Tipo === 1 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
-            {props.Tipo === 2 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
-            {props.Tipo === 3 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
-            {props.Tipo === 4 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
-            {props.Tipo === 5 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
-            {props.Tipo === 6 && <MenuDinamico Ruta="listarxTipo" Tipo={props.Tipo}/>}
+            {Tipo === 1 && <MenuDinamico Ruta="listarxTipo" Tipo={Tipo}/>}
+            {Tipo === 2 && <MenuDinamico Ruta="listarxTipo" Tipo={Tipo}/>}
+            {Tipo === 3 && <MenuDinamico Ruta="listarxTipo" Tipo={Tipo}/>}
+            {Tipo === 4 && <MenuDinamico Ruta="listarxTipo" Tipo={Tipo}/>}
+            {Tipo === 5 && <MenuDinamico Ruta="listarxTipo" Tipo={Tipo}/>}
+            {Tipo === 6 && <MenuDinamico Ruta="listarxTipo" Tipo={Tipo}/>}
         </>
     );
 }
 
 export function MenuDinamico(props : any){
+    const {Ruta, Tipo} = props;  
     const [Menu,SetMenu] = useState([{"codigo":"","titulo":"","descripcion":"","imagen":"","precio":""}]);
 
     useEffect(()=>{
         CrearMenu();
     },[]);
     async function CrearMenu(){
-        let url = `${WebServiceUrl}/api/menu/${props.Ruta}?TipoMenu=${props.Tipo}`;
+        let url = `${WebServiceUrl}/api/menu/${Ruta}?TipoMenu=${Tipo}`;
         try{
             let response = await fetch(url);
             if(response.ok){

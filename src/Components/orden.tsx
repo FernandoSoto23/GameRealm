@@ -10,7 +10,7 @@ export function Orden(props : any){
     let Url = useLocation();
     let Codigo = Url.search;
     const [contador,setContador] = useState(0);
-    const [codigo,setCodigo] = useState("");
+    const [codigo,setCodigo]  = useState("");
     const [titulo,setTitulo] = useState();
     const [imagen,setImagen] = useState();
     const [precio,setPrecio] = useState();

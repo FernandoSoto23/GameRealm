@@ -6,22 +6,22 @@ import {WebServiceUrl} from '../clases/rutas';
 import { SanitizarDatosString,SanitizarDatosInt, Auth} from "../clases/metodosGlobales";
 
 export function Editar(props : any){
-
+    const {crear} = props;
 
     useEffect(()=>{
         Auth("../../home","admin");
     },[])
     return(
         <>
-            {props.crear === 1 && <Crear></Crear>}
-            {props.crear === 2 && <Crear accion={1}/>}
+            {crear === 1 && <Crear></Crear>}
+            {crear === 2 && <Crear accion={1}/>}
         </>
     )
 }
 
 
 function Crear(props : any){
-
+    const {accion} = props;
     const [filtro,setFiltro] =useState(0);
     const [codigo,setCodigo] =useState(0);
     const [titulo,setTitulo] = useState("");
@@ -38,7 +38,7 @@ function Crear(props : any){
     useEffect(()=>{
         
        
-        if(props.accion === 1){
+        if(accion === 1){
             CrearMenu();
             setAccionActualizar(true);
         }
@@ -111,7 +111,7 @@ function Crear(props : any){
             
             let url = `${WebServiceUrl}/api/menu/guardar/`;
 
-           if(props.accion === 1)
+           if(accion === 1)
                 url = `${WebServiceUrl}/api/menu/actualizar?codigo=${platillo.Codigo}`;
            
            const construirJson = {
@@ -119,7 +119,7 @@ function Crear(props : any){
                 token : token,
                 menu : platillo
            }
-           if(props.accion === 1){
+           if(accion === 1){
                 const requestOptions = {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
@@ -215,11 +215,11 @@ function Crear(props : any){
                         <textarea className="textarea" onChange={(e)=>{setDescripcion(e.target.value)}} value={descripcion}></textarea>
                        
                     {
-                        props.accion === 1 && boton && 
+                        accion === 1 && boton && 
                         <input className="boton boton-azul-verde" type="button" onClick={Guardar} value="Actualizar Anuncio"/>
                     }
                     {
-                        props.accion === undefined && boton && 
+                        accion === undefined && boton && 
                         <input className="boton boton-azul-verde" type="button" onClick={Guardar} value="Crear Nuevo Anuncio"/>
                     }
 

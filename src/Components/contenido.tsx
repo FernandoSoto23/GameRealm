@@ -70,7 +70,7 @@ export function Contenido(){
                     <Route path="/Postres" element={<Menu Tipo={5} />}> </Route>
                     <Route path="/Especiales" element={<Menu Tipo={6} />}> </Route>
                     <Route path="/Login" element={<Login />}> </Route>
-                    <Route path="/Admin" element={<Login admin={true} />}> </Route>
+                    <Route path="/Admin" element={<Login administrador={true} />}> </Route>
                     
 
                     <Route path="/Configuracion" element={<Configuracion/>}> </Route>
