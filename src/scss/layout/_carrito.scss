@@ -1,0 +1,31 @@
+
+
+.tabla-carito{
+
+}
+.tabla-encabezado{
+    height: 5rem;
+    border: 1px solid rgb(128, 128, 128);
+
+}
+.titulo{
+    border: 1px solid rgb(128, 128, 128);
+    
+}
+.tabla-carrito-contenido{
+    .imagen-carrito{
+        width: 20rem;
+        height: 20rem;
+    }
+    .celda{
+        padding: 1rem;
+        font-weight: 700;
+    }
+    .imagen{
+        width: 10rem;
+        height: 10rem;
+    }
+    .celda-boton{
+        text-align: center;
+    }
+}

@@ -1,0 +1,64 @@
+
+
+.DarkMode{
+    background-color: $grisDark;
+    p,a{
+        color: rgb(154, 154, 154);
+    }
+    .input-number{
+        color: white;
+        width: 3rem;
+        
+        padding: .5rem;
+    }
+    h1,h2,h3,h4,label{
+        color: $blanco;
+    }
+    .saludo{
+        color: $blanco;
+    }
+    .card-contenido{
+        
+    }
+    .input{
+        color: $blanco;
+        background-color: $grisNavegacion;
+
+    }
+    button{
+        color: $blanco;
+    }
+    .input-login{
+        border: none;
+    }
+    .activo{
+        p{
+            color: $amarillo;
+        }
+    }
+
+    
+    .card-contenido-personalizado{
+        border: 1px solid $grisBordesDarkMode;
+        .card-header{
+            background-color: $grisDark;
+            border: 1px solid $grisBordesDarkMode;
+        }
+        .card-tabla{
+            .col{
+                border: 1px solid $grisBordesDarkMode;
+            }
+        }
+    }
+    .list-group-item{
+        border-radius: .5rem;
+        background-color: $grisNavegacion;
+        border: 1px solid rgb(85, 85, 85);
+    }
+    .boton-amarillo{
+        color: $negro;
+    }
+    .contenedor-contador{
+        border: 1px solid rgb(47, 47, 47);
+    }
+}

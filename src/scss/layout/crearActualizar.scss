@@ -1,0 +1,17 @@
+
+
+.crearActualizar{
+    margin: 2rem;
+    .campos{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.errores{
+    color: white;
+    margin: .2rem;
+    height: 2.5rem;
+    background-color: red;
+    border-radius: 1rem;
+}

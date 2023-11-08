@@ -1,0 +1,92 @@
+
+@include tablet{
+    .menu-grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+
+        h3{
+            font-size: 2.5rem;
+        }
+        p{
+            font-size: 1.5rem;
+        }
+    }
+    .menu-orden{
+        width: 50%;
+    }
+}
+@include desktopHD{
+    .menu-grid{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+    }
+}
+.contenido-producto{
+    border-radius: 5rem 0rem;
+    h3,p{
+        color: $negro;
+        padding: 0 1rem;
+        margin: 0;
+    }
+    h3{
+        font-weight: $bold;
+    }
+    .boton-largo{
+        margin: 0 1.5rem;
+        border-radius: 5rem 0rem;
+    }
+
+
+    .span-precio{
+        font-weight: $bold;
+        color: $verdeDollar;
+    }
+    .envio{
+        font-size: 1.5rem;
+        color: rgb(112, 112, 112);
+    }
+    
+}
+
+/* orden */
+.contenedor-contador{
+    display: flex;
+    
+    width: 8rem; 
+    border-radius: .5rem;
+    border: 1px solid rgb(167, 166, 166);
+    margin: 1rem;
+}
+.btn-numerar{
+    color: white;
+    font-size: 2rem;
+    font-weight: $bold;
+    border: none;
+    width: 3rem;
+    background-color: rgb(8, 196, 8);
+    border-radius: .5rem;
+}
+.input-number{
+    width: 3rem;
+    padding: .5rem;
+    font-weight: $bold;
+    
+}
+input.input-number::-webkit-outer-spin-button,
+input.input-number::-webkit-inner-spin-button,
+input.input-number{
+    -webkit-appearance: none;
+}
+.añadir-carrito{
+    display: flex;
+    align-items: center;
+}
+.ver-mas{
+    font-weight: $bold;
+}
+.imagen-recortada{
+    width: 500px;
+	height: 300px;
+	object-fit: cover;
+	background-color: black;
+}
