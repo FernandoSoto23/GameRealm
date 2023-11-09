@@ -15,6 +15,7 @@ import { Login } from "./login";
 import { Menu } from "./menus";
 import { Orden } from "./orden";
 import Resumen from "./resumen";
+import { RegistrarUsuario } from "./RegistrarUsuario";
 
 export function Contenido(){
     let boleanActualizado =false;
@@ -79,7 +80,7 @@ export function Contenido(){
 
                     <Route path="/Admin/Panel" element={<Admin/>}> </Route>
                     <Route path="/Admin/Panel/Crear" element={<Editar crear={1}/>}> </Route>
-                    
+                    <Route path="/RegistrarUsuario" element={<RegistrarUsuario/>}></Route>
                     {boleanActualizado && <Route path={location.pathname} element={<Editar crear={2}/>}> </Route>}
                     
                     {checar && <Route path={location.pathname} element={<Orden/>}> </Route>}

@@ -9,7 +9,7 @@ export function Editar(props : any){
     const {crear} = props;
 
     useEffect(()=>{
-        Auth("../../home","admin");
+       /*  Auth("../admin/panel","admin"); */
     },[])
     return(
         <>

@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 import {WebServiceUrl} from '../clases/rutas';
+import Swal from 'sweetalert2'
 import { Auth } from "../clases/metodosGlobales";
+import {
+    BrowserRouter as Router,
+    Routes as Switch,
+    Route,
+    Link,
+    NavLink
+  } from "react-router-dom";
 const imagen = require('../build/img/logo.png') ;
 
 export function Login(props : any){
@@ -22,7 +30,12 @@ export function Login(props : any){
                 localStorage.setItem('admin',JSON.stringify(datos.dato.admin));
                 window.location.href = "../admin/panel";
             }else{
-                alert("error");
+                Swal.fire({
+                    icon: "error",
+                    title: "Error al iniciar sesion",
+                    text: "Contraseña incorrecta o usuario incorrecto, verifique bien sus datos",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                  });
             }
         }else{
             //LOGUEA AL USUARIO NORMAL
@@ -36,16 +49,24 @@ export function Login(props : any){
                 localStorage.setItem('token',JSON.stringify(datos.dato.token));
                 window.location.href = "./home";
             }else{
-                alert("error");
+                Swal.fire({
+                    icon: "error",
+                    title: "Ingresa los datos correspondientes",
+                    text: "Contraseña incorrecta o usuario incorrecto, verifique bien sus datos",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                  });
             }
         }
 
     }   
 
     useEffect(()=>{
-        if(administrador){
-            Auth("../admin/panel","admin");
-        }
+/*         if(administrador){
+            const auth : boolean = Auth("admin") ?? false;
+            if(auth){
+                
+            }
+        } */
         
     },[]);
     //para logueo de admin
@@ -70,7 +91,9 @@ export function Login(props : any){
                     <div className="linea"></div>
                     
                     <p className="p-login">¿Eres Nuevo en la app?</p>
-                    <button type="submit" className="boton btn-crearCuenta">Crear Cuenta</button>
+                    <NavLink to="/RegistrarUsuario">
+                            <p className="boton btn-crearCuenta">Crear una cuenta</p>
+                    </NavLink>
                 </>
             }
             {admin == true &&
