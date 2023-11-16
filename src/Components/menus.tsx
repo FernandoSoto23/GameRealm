@@ -25,7 +25,7 @@ export function MenuDinamico(props : any){
         CrearMenu();
     },[]);
     async function CrearMenu(){
-        let url = `${WebServiceUrl}/api/menu/${Ruta}?TipoMenu=${Tipo}`;
+        let url = `${WebServiceUrl}/api/Titulo/${Ruta}?Categoria=${Tipo}`;
         try{
             let response = await fetch(url);
             if(response.ok){
@@ -34,7 +34,7 @@ export function MenuDinamico(props : any){
                 console.log('Respuesta de red OK pero respuesta de HTTP no OK');
             }
             let datos = await response.json();
-
+            console.log(datos)
             SetMenu(datos);
         }catch( error : any){
             console.log('Hubo un problema con la petición Fetch:' + error.message);

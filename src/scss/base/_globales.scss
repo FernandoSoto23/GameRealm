@@ -1,136 +1,159 @@
 @use 'variables';
 
-html{
+html {
     font-size: 62.5%;
     box-sizing: border-box;
 }
+
 *,
 *::before,
-*::after{
+*::after {
     box-sizing: inherit;
 }
-body{
+
+body {
     font-family: $fuente;
     font-size: 1.6rem;
 }
 
-p{
+p {
     font-size: 2rem;
     color: $negro;
 }
-.contenedor{
+
+.contenedor {
     width: 95%;
     max-width: 120rem;
     margin: 0 auto;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
-h1,h2,h3{
+h1,
+h2,
+h3 {
     margin: 0 0 5rem 0;
 }
-h1{
+
+h1 {
     font-size: 4rem;
 }
-h2{
+
+h2 {
     font-size: 3.6rem;
 }
-h3{
+
+h3 {
     font-size: 3rem;
 }
 
 //interfaz
 
 /* Botones */
-.boton{
+.boton {
     padding: .5rem;
     height: 3.5rem;
     border: none;
     background-color: rgba(255, 0, 0, 0);
     border-radius: 1rem;
-    
+
 }
-.boton-azul-verde{
+
+.boton-azul-verde {
     background-color: $verde;
 }
-.boton-rojo-amarillo{
+
+.boton-rojo-amarillo {
     background-color: rgb(248, 37, 9);
 }
-.boton-rojo{
+
+.boton-rojo {
     background-color: rgb(248, 37, 9);
     color: #ededed;
 }
-.boton-amarillo{
+
+.boton-amarillo {
     background-color: $amarillo;
 }
-.boton-largo{
+
+.boton-largo {
     width: 90%;
 }
+
 /* Fin Botones */
-.input{
-    border: 1px solid $negro; 
+.input {
+    border: 1px solid $negro;
     padding: 1rem;
     border-radius: .5rem;
     font-size: 1.5rem;
     outline: none;
-    
+
 }
 
-.texto-centrado{
+.texto-centrado {
     text-align: center;
 }
 
-.ajustar-imagen{
+.ajustar-imagen {
     max-width: 100%;
     max-height: 100%;
 }
 
-.card-contenido{
+.card-contenido {
     margin: 3rem auto;
     padding-bottom: 2rem;
     width: 90%;
     height: auto;
-    box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
     border-radius: 1rem;
 }
-.card-contenido-personalizado{
+
+.card-contenido-personalizado {
     box-shadow: none;
     border: 1px solid $grisBordes;
-    .card-header{
+
+    .card-header {
         padding: 1rem;
         border: 1px solid $grisBordes;
         border-radius: 1rem;
-        background-color:aliceblue;
+        background-color: aliceblue;
         font-weight: $bold;
     }
-    .card-tabla{
-        .col{
+
+    .card-tabla {
+        .col {
             padding: .5rem;
             border: 1px solid $grisBordes;
             display: flex;
-            justify-content:space-between;
+            justify-content: space-between;
             align-items: center;
         }
     }
-    
+
 }
-.linea{
+
+.linea {
     width: 95%;
     height: .1rem;
     margin: 0 auto;
     background-color: rgb(151, 151, 151);
 }
-.list-style-none{
+
+.list-style-none {
     list-style: none;
 }
+
 //margenes
-    .margin-none{
-        margin: 0;
-    }
-    .margin-10{
-        margin: 2rem;
-    }
+.margin-none {
+    margin: 0;
+}
+
+.margin-10 {
+    margin: 2rem;
+}
+
 //fin margenes

@@ -7,8 +7,10 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /* Sections
@@ -43,9 +45,12 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
 }
 
 /**
@@ -53,8 +58,10 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /* Text-level semantics
@@ -71,9 +78,12 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
 }
 
 /**
@@ -91,8 +101,10 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /**
@@ -142,10 +154,14 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
 }
 
 /**
@@ -153,7 +169,8 @@ textarea {
  * 1. Show the overflow in Edge.
  */
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -162,7 +179,8 @@ input { /* 1 */
  * 1. Remove the inheritance of text transform in Firefox.
  */
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -211,12 +229,18 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
 }
 
 /**
@@ -239,8 +263,10 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /**
@@ -256,8 +282,10 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type=search] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
 }
 
 /**
@@ -272,8 +300,10 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /* Interactive
@@ -339,7 +369,9 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0 0 5rem 0;
 }
 
@@ -508,13 +540,28 @@ h3 {
 .header .input:focus {
   outline: none;
 }
+.header .header-ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 40rem;
+}
+.header .header-ul p {
+  color: #FFFFFF;
+}
+.header .header-ul .header-botones {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 @media (min-width: 768px) {
   .header {
     position: sticky;
     top: 0;
     background-color: rgb(47, 47, 47);
     width: 100%;
-    height: 10rem;
+    height: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -625,6 +672,21 @@ h3 {
     position: fixed;
   }
 }
+.container .card-container {
+  text-align: right;
+  justify-content: left;
+  width: 100px;
+  height: 30rem;
+  font-size: 5px;
+}
+.container .card-deck {
+  text-align: right;
+  justify-content: center;
+  width: 500px;
+  height: 30rem;
+  font-size: 15px;
+}
+
 .barra {
   position: sticky;
   top: 0;
@@ -821,20 +883,22 @@ h3 {
   width: 70%;
 }
 
-@media (min-width: 768px) {
-  .contenedor-barra {
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 20% 1fr;
-  }
-  .contenedor-barra .barra {
-    grid-row: 1/3;
-    grid-column: 1/2;
-  }
-  .contenedor-barra .header {
-    grid-row: 1/2;
-    grid-column: 2/3;
-  }
+.contenedor-barra {
+  /*     @include tablet() {
+          display: grid;
+          grid-template-columns: 1fr 5fr;
+          grid-template-rows: 20% 1fr;
+
+          .barra {
+              grid-row: 1 / 3;
+              grid-column: 1 / 2;
+          }
+
+          .header {
+              grid-row: 1 / 2;
+              grid-column: 2 / 3;
+          }
+      } */
 }
 
 @media (min-width: 768px) {
@@ -861,7 +925,8 @@ h3 {
 .contenido-producto {
   border-radius: 5rem 0rem;
 }
-.contenido-producto h3, .contenido-producto p {
+.contenido-producto h3,
+.contenido-producto p {
   color: #000000;
   padding: 0 1rem;
   margin: 0;

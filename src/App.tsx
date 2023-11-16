@@ -4,6 +4,7 @@ import { Barra } from './Components/barra';
 import { Contenido } from './Components/contenido';
 import './build/css/app.css';
 import { BarraInferior } from './Components/barraInferior';
+import { Header } from './Components/header';
 
 function App() {
   
@@ -11,7 +12,7 @@ function App() {
     <div>
       
       <div className='contenedor-barra'>
-        <Barra></Barra>
+        <Header></Header>
         <Contenido></Contenido>
         <BarraInferior/>
       </div>

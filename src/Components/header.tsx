@@ -4,31 +4,47 @@ import { NavLink } from "react-router-dom";
 //menu fixed
 
 
-export function Header(){
+export function Header() {
 
     let variable = 10;
 
-    return(
+    return (
         <header className="header">
             <nav className="header-navegacion">
                 <div className="buscar-producto">
-                    <input className="input" type="text" placeholder="Buscar"/>
+                    <input className="input" type="text" placeholder="Buscar" />
                     <button className="boton boton-buscar"></button>
                 </div>
+
                 <div>
-                    <a className="carrito">
-                        <div className="position-relative">
-                            <img src="https://i.ibb.co/fQwSFC5/carro-de-la-carretilla.png" alt="carro-de-la-carretilla"/>
-                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger bg-num-carrrito">{variable}</span>
-                        </div>
-                        
-                    </a>
+                    <ul className="header-ul">
+                        <NavLink to="/ComidaRapida" className={(({ isActive }) => isActive ? 'activo' : '')}>
+                            <li className="boton header-botones">
+
+                                <p>Inicio</p>
+                            </li>
+                        </NavLink>
+                        <NavLink to="/ComidaRapida" className={(({ isActive }) => isActive ? 'activo' : '')}>
+                            <li className="boton header-botones">
+
+                                <p>Biblioteca</p>
+                            </li>
+                        </NavLink>
+                        <NavLink to="/ComidaRapida" className={(({ isActive }) => isActive ? 'activo' : '')}>
+                            <li className="boton header-botones">
+                                <p>Categorias</p>
+                            </li>
+                        </NavLink>
+
+                    </ul>
+                </div>
+               
+                <div>
+                    <NavLink to="./Login">Iniciar Sesion</NavLink>
                 </div>
             </nav>
-            
-            <div>
-                <NavLink to="./Login">Iniciar Sesion</NavLink>
-            </div>
+
+
         </header>
     );
 };
