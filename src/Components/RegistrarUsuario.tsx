@@ -1,30 +1,33 @@
 
   export function RegistrarUsuario() {
   return (
-  <form className="row g-3">
-    <div className="col-md-6">
-      <label htmlFor="inputEmail4" className="form-label">Nombre completo</label>
-      <input type="text" className="form-control" id="inputNC" />
+    <div style={{margin : "0 auto",width : "100rem"}}>
+    <div className="contenedor-padre">
+      <div className="card-logo">
+        <h1>:v</h1>
+      </div>
+      <div className="card-registrarUsuario">
+        <form>
+          <h1>Crear cuenta</h1>
+          <input className="input" type="text" placeholder="Nombre completo" />
+          <input className="input" type="text" placeholder="Nombre usuario" />
+          <input className="input" type="email" placeholder="Correo electronico"/>
+          <input className="input" type="password" placeholder="Contraseña" />
+          <input className="input" type="password" placeholder="Confirmar contraseña" />
+          <input className="input" type="telefono" placeholder="Teléfono" />
+          <div className="boton-orientacion">
+          <div>
+            <button className="boton-rojo">Cancelar</button>
+          </div>
+          <div> 
+            <button className="boton-amarillo" >Crear cuenta</button>  
+          </div>
+          </div>
+        </form>
+      </div>
+      
     </div>
-    <div className="col-md-6">
-      <label htmlFor="inputPassword4" className="form-label">Nombre de Usuario</label>
-      <input type="text" className="form-control" id="inputNU" />
     </div>
-    <div className="col-md-6">
-      <label htmlFor="inputAddress" className="form-label">Email</label>
-      <input type="email" className="form-control" id="inputEmail" />
-    </div>
-    <div className="col-md-6">
-      <label htmlFor="inputAddress2" className="form-label">Contraseña</label>
-      <input type="password" className="form-control" id="inputContraseña"/>
-    </div>
-    <div className="col-md-2">
-        <label htmlFor="" className="form-label">Telefono</label>
-        <input type="tel" className="form-control" id="inputTel"/>
-    </div>
-    <div>
-    <button type="button" className="btn btn-success">Success</button>
-    </div>
-    </form>
+
   );
   }
