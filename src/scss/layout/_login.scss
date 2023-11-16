@@ -27,15 +27,13 @@
         font-size: 1.5rem;
     }
     .btn-crearCuenta{
+        background-color: $grisBordes;
+        border-radius: 1rem;
+        text-align: center;
         margin: 1rem auto;
         padding: .2rem;
         width: 80%;
-        border-radius: 0;
-        border: 1px solid $grisNavegacion;
-        box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
-        -webkit-box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
-        -moz-box-shadow: 2px 1px 26px 0px rgba(0,0,0,0.75);
-    }
+        }
 }
 
 @include tablet{

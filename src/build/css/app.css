@@ -480,14 +480,12 @@ h3 {
   font-size: 1.5rem;
 }
 .contenedor-login .btn-crearCuenta {
+  background-color: rgb(170, 170, 170);
+  border-radius: 1rem;
+  text-align: center;
   margin: 1rem auto;
   padding: 0.2rem;
   width: 80%;
-  border-radius: 0;
-  border: 1px solid rgb(47, 47, 47);
-  box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 2px 1px 26px 0px rgba(0, 0, 0, 0.75);
 }
 
 @media (min-width: 768px) {
@@ -1110,4 +1108,48 @@ input.input-number {
   border: 1px solid black;
   width: 72rem;
   margin: 0 auto;
+}
+
+.contenedor-padre {
+  display: flex;
+  flex-direction: row;
+}
+.contenedor-padre .card-logo {
+  background-color: red;
+  width: 50rem;
+  height: 50rem;
+}
+.contenedor-padre .card-registrarUsuario {
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+  border-radius: 1rem;
+  width: 50rem;
+  height: 50rem;
+  padding: 1rem;
+}
+.contenedor-padre .card-registrarUsuario h1 {
+  text-align: center;
+}
+.contenedor-padre .card-registrarUsuario .input {
+  margin-bottom: 3%;
+  width: 100%;
+  height: 1%;
+  border-radius: 1rem;
+}
+.contenedor-padre .card-registrarUsuario .boton-orientacion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.contenedor-padre .card-registrarUsuario .boton-rojo {
+  width: 12rem;
+  height: 3rem;
+  border: none;
+  border-radius: 1rem;
+}
+.contenedor-padre .card-registrarUsuario .boton-amarillo {
+  width: 12rem;
+  height: 3rem;
+  border: none;
+  border-radius: 1rem;
 }
