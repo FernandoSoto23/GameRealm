@@ -13,6 +13,7 @@ function App() {
       
       <div className='contenedor-barra'>
         <Header></Header>
+        <Barra/>
         <Contenido></Contenido>
         <BarraInferior/>
       </div>

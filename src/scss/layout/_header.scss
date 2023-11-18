@@ -1,4 +1,5 @@
 .header {
+    display: none;
     background-color: $grisNavegacion;
     width: 100%;
 
@@ -23,17 +24,15 @@
             color: $blanco;
         }
 
-        .header-botones {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
+
         }
     }
 
     /* Aqui no editar poor ahora */
     @include tablet() {
 
-        position: sticky;
+        position: fixed;
+        z-index: 10;
         top: 0;
         background-color: $grisNavegacion;
         width: 100%;
@@ -62,9 +61,21 @@
                 }
 
             }
+            .activo{
+                .header-botones {
+                    list-style: none;
+                    display: block;
+                    .opciones{
+                        
+                    }
+            }
+
         }
 
-
+        .card-login-carrito{
+            display: flex;
+            align-items: center;
+        }
         .boton-buscar {
             background-image: url(../../build/img/lupa.png);
             width: 4rem;
@@ -129,8 +140,8 @@
 
     .boton-buscar {
         background-image: url(../../build/img/lupa.png);
-        width: 1rem;
-        height: 1rem;
+        width: 2rem;
+        height: 2rem;
         background-repeat: no-repeat;
         background-size: cover;
         border: none;

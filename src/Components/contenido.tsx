@@ -64,8 +64,9 @@ export function Contenido(){
             <Routes>
                             
                     <Route path="/Carrito" element={<Carrito/>}> </Route>
-                    <Route path="/ComidaRapida" element={<Menu Tipo={1}/>}> </Route>
-                    <Route path="/Ensaladas" element={<Menu Tipo={2} />}> </Route>
+                    <Route path="/Biblioteca" element={<Menu Tipo={1}/>}> </Route>
+                    <Route path="/Categoria" element={<Menu Tipo={2} />}> </Route>
+                    
                     <Route path="/Desayunos" element={<Menu Tipo={3} />}> </Route>
                     <Route path="/Bebidas" element={<Menu Tipo={4} />}> </Route>
                     <Route path="/Postres" element={<Menu Tipo={5} />}> </Route>

@@ -526,6 +526,7 @@ h3 {
   }
 }
 .header {
+  display: none;
   background-color: rgb(47, 47, 47);
   width: 100%;
   /* Aqui no editar poor ahora */
@@ -549,13 +550,15 @@ h3 {
   color: #FFFFFF;
 }
 .header .header-ul .header-botones {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  list-style: none;
+}
+.header .header-ul .header-botones .opciones {
+  z-index: -1;
 }
 @media (min-width: 768px) {
   .header {
-    position: sticky;
+    position: fixed;
+    z-index: 1;
     top: 0;
     background-color: rgb(47, 47, 47);
     width: 100%;
@@ -579,6 +582,10 @@ h3 {
   .header .header-navegacion .buscar-producto .input {
     margin: 0 1rem;
     width: 70%;
+  }
+  .header .card-login-carrito {
+    display: flex;
+    align-items: center;
   }
   .header .boton-buscar {
     background-image: url(../../build/img/lupa.png);
@@ -634,8 +641,8 @@ h3 {
 }
 .header-navegacion .boton-buscar {
   background-image: url(../../build/img/lupa.png);
-  width: 1rem;
-  height: 1rem;
+  width: 2rem;
+  height: 2rem;
   background-repeat: no-repeat;
   background-size: cover;
   border: none;
@@ -692,6 +699,7 @@ h3 {
 }
 @media (min-width: 768px) {
   .barra {
+    display: none;
     background: rgb(37, 37, 37);
     border: 1px solid rgb(58, 58, 58);
     margin: 0;
