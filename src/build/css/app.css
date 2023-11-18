@@ -529,7 +529,6 @@ h3 {
   display: none;
   background-color: rgb(47, 47, 47);
   width: 100%;
-  /* Aqui no editar poor ahora */
 }
 .header .input {
   background-color: rgb(47, 47, 47);
@@ -549,16 +548,10 @@ h3 {
 .header .header-ul p {
   color: #FFFFFF;
 }
-.header .header-ul .header-botones {
-  list-style: none;
-}
-.header .header-ul .header-botones .opciones {
-  z-index: -1;
-}
 @media (min-width: 768px) {
   .header {
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     top: 0;
     background-color: rgb(47, 47, 47);
     width: 100%;
@@ -573,6 +566,9 @@ h3 {
     align-items: center;
     justify-content: space-between;
   }
+  .header .header-navegacion .header-botones {
+    list-style: none;
+  }
   .header .header-navegacion .buscar-producto {
     display: flex;
     justify-content: center;
@@ -583,11 +579,11 @@ h3 {
     margin: 0 1rem;
     width: 70%;
   }
-  .header .card-login-carrito {
+  .header .header-navegacion .card-login-carrito {
     display: flex;
     align-items: center;
   }
-  .header .boton-buscar {
+  .header .header-navegacion .boton-buscar {
     background-image: url(../../build/img/lupa.png);
     width: 4rem;
     height: 4rem;
@@ -595,30 +591,31 @@ h3 {
     background-size: cover;
     border: none;
   }
-  .header .carrito {
+  .header .header-navegacion .carrito {
     display: flex;
     gap: 1rem;
     justify-content: center;
     align-items: center;
   }
-  .header .carrito p {
+  .header .header-navegacion .carrito p {
     color: #FFFFFF;
     margin-right: 3rem;
   }
-  .header .carrito img {
+  .header .header-navegacion .carrito img {
     width: 5rem;
     height: 5rem;
   }
-  .header .carrito span {
+  .header .header-navegacion .carrito span {
     color: #fef46D;
   }
-  .header .header-logueo {
+  .header .header-navegacion .header-logueo {
     background-color: blue;
     width: 20rem;
     height: 10rem;
   }
 }
 
+/* Aqui no editar poor ahora */
 /* Aqui puedes edditar */
 .header-navegacion {
   background-color: rgb(47, 47, 47);
