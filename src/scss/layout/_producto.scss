@@ -1,0 +1,79 @@
+.contenido-padre{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5rem;
+
+    .card-imagen{
+        width: 40rem;
+        height: 50rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        text-align:center;
+        .button-trailer{
+            margin-top: 1rem;
+            border: none;
+            width: 10rem;
+            height: 4rem;
+            border-radius: 1rem;
+            background-color:rgb(82, 189, 252);
+        }
+    }
+    .card-producto{
+        border-radius: 0rem 1rem 1rem 0rem;
+        width: 100rem;
+        height: 50rem;
+        padding: 1rem;
+        .seccion-columna{
+            display: flex;
+            flex-direction: column;
+        }
+        .seccion-fila{
+            display: flex;
+            flex-direction: row;
+        }
+        .margen-left{
+            margin-left: 20rem;
+        }
+        .margen-top{
+            margin-top: 0.3rem;
+        }
+        .separador{
+            text-align:end;
+            margin-left: 10rem;
+            margin-top: 0.3rem;
+        }
+    }    
+    .separacion{
+        border-top: solid black 0.2rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+    .card-compra{
+        border-radius: 1rem;
+        border: solid 0.1rem;
+        border-color:black;
+        margin-top: 10rem;
+        margin-right: 1rem;
+        padding: 1rem;
+        text-align: center;
+        width: 50rem;
+        height: 22rem;
+            .boton-compra{
+            text-align: center;
+            background-color:rgb(49, 176, 250);
+            border: none;
+            border-radius: 1rem;
+            width: 15rem;
+            height: 3rem;
+            margin-bottom: 1rem;
+            }
+            .boton-agregar{
+            text-align: center;
+            background-color: rgb(208, 232, 255);
+            border: none;
+            border-radius: 1rem;
+            width: 15rem;
+            height: 3rem;
+        }
+    }
+}

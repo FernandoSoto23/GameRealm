@@ -16,6 +16,7 @@ import { Menu } from "./menus";
 import { Orden } from "./orden";
 import Resumen from "./resumen";
 import { RegistrarUsuario } from "./RegistrarUsuario";
+import { Producto } from "./producto";
 
 export function Contenido(){
     let boleanActualizado =false;
@@ -64,7 +65,7 @@ export function Contenido(){
             <Routes>
                             
                     <Route path="/Carrito" element={<Carrito/>}> </Route>
-                    <Route path="/Biblioteca" element={<Menu Tipo={1}/>}> </Route>
+                    <Route path="/Biblioteca" element={<Producto/>}> </Route>
                     <Route path="/Categoria" element={<Menu Tipo={2} />}> </Route>
                     
                     <Route path="/Desayunos" element={<Menu Tipo={3} />}> </Route>
