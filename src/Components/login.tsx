@@ -19,7 +19,7 @@ export function Login(props : any){
     async function loguear(){
         //LOGUEA AL ADMIN
         if(admin){
-            let url = (`${WebServiceUrl}/api/login/admin?email=${user}&pwd=${pwd}`);
+            let url = (`${WebServiceUrl}/api/usuario/admin?email=${user}&pwd=${pwd}`);
             let resp = await fetch(url);
             let datos = await resp.json();
             if(datos.msg === 'ok'){
@@ -39,7 +39,7 @@ export function Login(props : any){
             }
         }else{
             //LOGUEA AL USUARIO NORMAL
-            let url = (`${WebServiceUrl}/api/login/loguear?email=${user}&pwd=${pwd}`);
+            let url = (`${WebServiceUrl}/api/usuario/loguear?email=${user}&pwd=${pwd}`);
             let resp = await fetch(url);
             let datos = await resp.json();
             if(datos.msg === 'ok'){
@@ -75,7 +75,7 @@ export function Login(props : any){
         <div className="contenedor card-contenido contenedor-login">
             <img className="img-login" src={imagen} alt="" />
             <div className="contenedor-Logueo">
-                <label className="label-login">Email o Usuario</label>
+                <label className="label-login">Email</label>
                 <input type="email" placeholder="E-Mail" className="input input-login" onChange={( e : any )=>setUser(e.target.value)} value={user}/>
             </div>
             <div className="contenedor-Logueo">
