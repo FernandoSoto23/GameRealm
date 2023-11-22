@@ -1253,3 +1253,88 @@ input.input-number {
   width: 50%;
   margin: 0 auto;
 }
+
+.contenido-padre {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5rem;
+}
+.contenido-padre .card-imagen {
+  width: 40rem;
+  height: 50rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-align: center;
+}
+.contenido-padre .card-imagen .boton-trailer {
+  border-radius: 1rem;
+  border: none;
+  background-color: rgb(140, 255, 255);
+  width: 12rem;
+  height: 3.5rem;
+  margin-top: 1rem;
+}
+.contenido-padre .card-producto {
+  border-radius: 0rem 1rem 1rem 0rem;
+  width: 100rem;
+  height: 50rem;
+  padding: 1rem;
+}
+.contenido-padre .card-producto .seccion-columna {
+  display: flex;
+  flex-direction: column;
+}
+.contenido-padre .card-producto .seccion-fila {
+  display: flex;
+  flex-direction: row;
+}
+.contenido-padre .card-producto .margen-left {
+  margin-left: 20rem;
+}
+.contenido-padre .card-producto .margen-top {
+  margin-top: 0.3rem;
+}
+.contenido-padre .card-producto .separador {
+  text-align: end;
+  margin-left: 10rem;
+  margin-top: 0.3rem;
+}
+.contenido-padre .separacion {
+  border-top: solid black 0.2rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+.contenido-padre .card-compra {
+  border-radius: 1rem;
+  border: solid 0.1rem;
+  border-color: black;
+  margin-top: 10rem;
+  margin-right: 1rem;
+  padding: 1rem;
+  text-align: center;
+  width: 50rem;
+  height: 22rem;
+}
+.contenido-padre .card-compra .boton-compra {
+  text-align: center;
+  background-color: rgb(49, 176, 250);
+  border: none;
+  border-radius: 1rem;
+  width: 15rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+.contenido-padre .card-compra .boton-agregar {
+  text-align: center;
+  background-color: rgb(208, 232, 255);
+  border: none;
+  border-radius: 1rem;
+  width: 15rem;
+  height: 3rem;
+}
+
+.cerrar-modal {
+  border: none;
+  background-color: transparent;
+  margin-left: 94%;
+}
