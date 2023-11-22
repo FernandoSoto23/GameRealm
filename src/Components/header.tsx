@@ -1,12 +1,26 @@
 import path from "path";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import { NavLink } from "react-router-dom";
 
 //menu fixed
 
 
 export function Header() {
-    const [desplegar,setDesplegar] = useState(false);
+    const [nombreUsuario,setNombreUsuario] = useState("");
+
+    const MostrarUsuario = ()=>{
+        let usuarioGameRealm  : any = localStorage.getItem("UsuarioGameRealm");
+        usuarioGameRealm = JSON.parse(usuarioGameRealm);
+        console.log(usuarioGameRealm["nombreUsuario"])
+        if(usuarioGameRealm !== null){
+            setNombreUsuario(usuarioGameRealm["nombreUsuario"]);
+        }
+    }
+    
+    useEffect(()=>{
+        MostrarUsuario();
+    },[]);
+    
     let variable = 10;
     const [isOpen, setIsOpen] = useState(false);
 
@@ -36,32 +50,12 @@ export function Header() {
                             </li>
                         </NavLink>
                         
-                        
-                        <div className="dropdown">
-                            <p onClick={toggleDropdown} aria-expanded={isOpen}>
-                                Dropdown button
-                            </p>
-                            <ul className={`dropdown-menu ${isOpen ? 'show' : ''}`}>
-                                <li>
-                                    <NavLink to="/Accion">
-                                       Accion
-                                    </NavLink>
-                                <a className="dropdown-item" href="#">
-                                   
-                                </a>
-                                </li>
-                                <li>
-                                <a className="dropdown-item" href="#">
-                                    Another action
-                                </a>
-                                </li>
-                                <li>
-                                <a className="dropdown-item" href="#">
-                                    Something else here
-                                </a>
-                                </li>
-                            </ul>
-                            </div>
+                        <NavLink to="/Biblioteca" className={(({ isActive }) => isActive ? 'activo' : '')}>
+                            <li className="boton header-botones">
+                                <p>Categorias</p>
+                            </li>
+                        </NavLink>
+
                     </ul>
                 </div>
                 
@@ -74,7 +68,8 @@ export function Header() {
                             </div>
                         </a>
                     </div> 
-                    <NavLink to="./Login">Iniciar Sesion</NavLink>
+                    {nombreUsuario !== "" ? <NavLink to="./Perfil">{nombreUsuario}</NavLink> : <NavLink to="./Login">Iniciar Sesion</NavLink>}
+                    
                 </div>
             </nav>
 

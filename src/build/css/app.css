@@ -489,18 +489,25 @@ h3 {
   display: flex;
   flex-direction: column;
   padding: 2.5rem;
+  background-color: #030e14;
+  color: white;
 }
 .contenedor-login .contenedor-Logueo {
   width: 100%;
 }
 .contenedor-login .img-login {
-  margin: 0 auto;
+  margin: 3rem auto;
   width: 50%;
   height: 50%;
 }
-.contenedor-login .input-login, .contenedor-login .label-login {
+.contenedor-login .input-login {
+  color: white;
   width: 90%;
   margin: 0 2rem;
+  background-color: #054256;
+}
+.contenedor-login .input-login::placeholder {
+  color: white;
 }
 .contenedor-login .btn-logueo {
   width: 80%;
@@ -522,7 +529,12 @@ h3 {
 
 @media (min-width: 768px) {
   .contenedor-login {
-    width: 50%;
+    width: 40%;
+  }
+}
+@media (min-width: 1600px) {
+  .contenedor-login {
+    width: 30%;
   }
 }
 .header {
@@ -618,7 +630,7 @@ h3 {
 /* Aqui no editar poor ahora */
 /* Aqui puedes edditar */
 .header-navegacion {
-  background-color: rgb(47, 47, 47);
+  background-color: #0e323c;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -887,6 +899,8 @@ h3 {
 }
 
 .contenedor-barra {
+  background-color: #357e92;
+  height: 120rem;
   /*     @include tablet() {
           display: grid;
           grid-template-columns: 1fr 5fr;
@@ -902,6 +916,16 @@ h3 {
               grid-column: 2 / 3;
           }
       } */
+}
+@media (min-width: 768px) {
+  .contenedor-barra {
+    height: 100rem;
+  }
+}
+@media (min-width: 1600px) {
+  .contenedor-barra {
+    height: 120rem;
+  }
 }
 
 @media (min-width: 768px) {

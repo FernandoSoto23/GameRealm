@@ -1,4 +1,4 @@
-import { Children, useState } from "react";
+import { Children, useEffect, useState } from "react";
 import {
     Routes,
     Route,
@@ -16,8 +16,10 @@ import { Menu } from "./menus";
 import { Orden } from "./orden";
 import Resumen from "./resumen";
 import { RegistrarUsuario } from "./RegistrarUsuario";
+import { Perfil } from "./perfil";
 
 export function Contenido(){
+    const [id,setId] = useState();
     let boleanActualizado =false;
     const location = useLocation();
     let checar = false;
@@ -45,9 +47,18 @@ export function Contenido(){
         case `/admin/panel/Actualizar${location.search}` :
             boleanActualizado =true;
             break;
-
-            
     }
+    const MostrarUsuario = ()=>{
+        let usuarioGameRealm  : any = localStorage.getItem("UsuarioGameRealm");
+        usuarioGameRealm = JSON.parse(usuarioGameRealm);
+        console.log(usuarioGameRealm["nombreUsuario"])
+        if(usuarioGameRealm !== null){
+            setId(usuarioGameRealm["id"]);
+        }
+    }
+    useEffect(()=>{
+        MostrarUsuario();
+    },[]);
     return(
         <div>
             <div className="contenido">
@@ -78,6 +89,8 @@ export function Contenido(){
                     <Route path="/Configuracion" element={<Configuracion/>}> </Route>
                     <Route path="/Carrito" element={<Carrito/>}> </Route>
                     <Route path="/Resumen" element={<Resumen/>}> </Route>
+                    <Route path="/Perfil" element={<Perfil/>}> </Route>
+                    
 
                     <Route path="/Admin/Panel" element={<Admin/>}> </Route>
                     <Route path="/Admin/Panel/Crear" element={<Editar crear={1}/>}> </Route>

@@ -1,5 +1,13 @@
 .contenedor-barra {
 
+    background-color: #357e92;
+    height: 120rem;
+    @include tablet{
+        height: 100rem;
+    }
+    @include desktopHD(){
+        height: 120rem;
+    }
 /*     @include tablet() {
         display: grid;
         grid-template-columns: 1fr 5fr;
