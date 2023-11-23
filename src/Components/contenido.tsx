@@ -17,6 +17,7 @@ import { Orden } from "./orden";
 import Resumen from "./resumen";
 import { RegistrarUsuario } from "./RegistrarUsuario";
 import { Producto } from "./producto";
+import { Perfil } from "./perfil";
 
 export function Contenido(){
     const [id,setId] = useState();
