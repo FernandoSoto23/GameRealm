@@ -12,8 +12,8 @@ export function Header() {
         <header className="header">
             <nav className="header-navegacion">
                 <div className="buscar-producto">
-                    <input className="input" type="text" placeholder="Buscar" />
-                    <button className="boton boton-buscar"></button>
+                    <input className="input" type="text" placeholder="Buscar" />    
+                    <button className="boton boton-buscar-"></button>
                 </div>
 
                 <div>
@@ -35,10 +35,9 @@ export function Header() {
                                 <p>Categorias</p>
                             </li>
                         </NavLink>
-
                     </ul>
                 </div>
-               
+
                 <div>
                     <NavLink to="./Login">Iniciar Sesion</NavLink>
                 </div>

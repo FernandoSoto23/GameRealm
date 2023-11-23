@@ -171,24 +171,11 @@
         position: fixed;
     }
 }
+/* Agrega estos estilos a tu archivo CSS */
 
-.container {
-    .card-container {
-        text-align: right;
-        justify-content: left;
-        width: 100px;
-        height: 30rem;
-        font-size: 5px;
-
-    }
-
-    .card-deck {
-        text-align: right;
-        justify-content: center;
-        width: 500px;
-        height: 30rem;
-        font-size: 15px;
-
-    }
-
-}
+.activo {
+    color: #ff0000; /* Cambia esto al color que desees */
+    font-weight: bold; /* Puedes ajustar el peso de la fuente según sea necesario */
+    /* Agrega otros estilos según sea necesario */
+  }
+  
