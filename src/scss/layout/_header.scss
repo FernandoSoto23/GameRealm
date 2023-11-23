@@ -67,6 +67,9 @@
             .card-login-carrito{
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
+                width: 20rem;
+                
             }
             .boton-buscar {
                 background-image: url(../../build/img/lupa.png);
