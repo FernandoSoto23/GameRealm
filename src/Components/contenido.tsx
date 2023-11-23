@@ -17,6 +17,7 @@ import { Orden } from "./orden";
 import Resumen from "./resumen";
 import { RegistrarUsuario } from "./RegistrarUsuario";
 import { Producto } from "./producto";
+import { Perfil } from "./perfil";
 
 export function Contenido(){
     const [id,setId] = useState();
@@ -48,16 +49,9 @@ export function Contenido(){
             boleanActualizado =true;
             break;
     }
-    const MostrarUsuario = ()=>{
-        let usuarioGameRealm  : any = localStorage.getItem("UsuarioGameRealm");
-        usuarioGameRealm = JSON.parse(usuarioGameRealm);
-        console.log(usuarioGameRealm["nombreUsuario"])
-        if(usuarioGameRealm !== null){
-            setId(usuarioGameRealm["id"]);
-        }
-    }
+   
     useEffect(()=>{
-        MostrarUsuario();
+       
     },[]);
     return(
         <div>
