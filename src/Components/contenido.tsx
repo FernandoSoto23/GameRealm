@@ -1,4 +1,4 @@
-import { Children, useState } from "react";
+import { Children, useEffect, useState } from "react";
 import {
     Routes,
     Route,
@@ -16,8 +16,11 @@ import { Menu } from "./menus";
 import { Orden } from "./orden";
 import Resumen from "./resumen";
 import { RegistrarUsuario } from "./RegistrarUsuario";
+import { Producto } from "./producto";
+import { Perfil } from "./perfil";
 
 export function Contenido(){
+    const [id,setId] = useState();
     let boleanActualizado =false;
     const location = useLocation();
     let checar = false;
@@ -45,9 +48,11 @@ export function Contenido(){
         case `/admin/panel/Actualizar${location.search}` :
             boleanActualizado =true;
             break;
-
-            
     }
+   
+    useEffect(()=>{
+       
+    },[]);
     return(
         <div>
             <div className="contenido">
@@ -64,8 +69,9 @@ export function Contenido(){
             <Routes>
                             
                     <Route path="/Carrito" element={<Carrito/>}> </Route>
-                    <Route path="/ComidaRapida" element={<Menu Tipo={1}/>}> </Route>
-                    <Route path="/Ensaladas" element={<Menu Tipo={2} />}> </Route>
+                    <Route path="/Biblioteca" element={<Producto/>}> </Route>
+                    <Route path="/Categoria" element={<Menu Tipo={2} />}> </Route>
+                    
                     <Route path="/Desayunos" element={<Menu Tipo={3} />}> </Route>
                     <Route path="/Bebidas" element={<Menu Tipo={4} />}> </Route>
                     <Route path="/Postres" element={<Menu Tipo={5} />}> </Route>
@@ -77,6 +83,8 @@ export function Contenido(){
                     <Route path="/Configuracion" element={<Configuracion/>}> </Route>
                     <Route path="/Carrito" element={<Carrito/>}> </Route>
                     <Route path="/Resumen" element={<Resumen/>}> </Route>
+                    <Route path="/Perfil" element={<Perfil/>}> </Route>
+                    
 
                     <Route path="/Admin/Panel" element={<Admin/>}> </Route>
                     <Route path="/Admin/Panel/Crear" element={<Editar crear={1}/>}> </Route>

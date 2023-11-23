@@ -19,7 +19,7 @@ export function Login(props : any){
     async function loguear(){
         //LOGUEA AL ADMIN
         if(admin){
-            let url = (`${WebServiceUrl}/api/login/admin?email=${user}&pwd=${pwd}`);
+            let url = (`${WebServiceUrl}/api/usuario/admin?email=${user}&pwd=${pwd}`);
             let resp = await fetch(url);
             let datos = await resp.json();
             if(datos.msg === 'ok'){
@@ -39,21 +39,20 @@ export function Login(props : any){
             }
         }else{
             //LOGUEA AL USUARIO NORMAL
-            let url = (`${WebServiceUrl}/api/login/loguear?email=${user}&pwd=${pwd}`);
+            let url = (`${WebServiceUrl}/api/usuario/loguear?email=${user}&pwd=${pwd}`);
             let resp = await fetch(url);
             let datos = await resp.json();
-            if(datos.msg === 'ok'){
-                localStorage.setItem('id',datos.dato.id);
-                localStorage.setItem('nombre',datos.dato.nombre);
-                localStorage.setItem('usuario',datos.dato.nombreUsuario);
-                localStorage.setItem('token',JSON.stringify(datos.dato.token));
+            if(datos.msg === 'ok' && datos.dato.id > 0){
+                Swal.fire("Te has logueado con exito!");
+                const usuario = datos.dato;
+                Object.freeze(usuario);
+                localStorage.setItem('UsuarioGameRealm',JSON.stringify(usuario));
                 window.location.href = "./home";
             }else{
                 Swal.fire({
                     icon: "error",
                     title: "Ingresa los datos correspondientes",
-                    text: "Contraseña incorrecta o usuario incorrecto, verifique bien sus datos",
-                    footer: '<a href="#">Why do I have this issue?</a>'
+                    text: "Contraseña incorrecta o usuario incorrecto, verifique bien sus datos"
                   });
             }
         }
@@ -75,11 +74,9 @@ export function Login(props : any){
         <div className="contenedor card-contenido contenedor-login">
             <img className="img-login" src={imagen} alt="" />
             <div className="contenedor-Logueo">
-                <label className="label-login">Email o Usuario</label>
-                <input type="email" placeholder="E-Mail" className="input input-login" onChange={( e : any )=>setUser(e.target.value)} value={user}/>
+                <input type="email" placeholder="Correo Electronico" className="input input-login" onChange={( e : any )=>setUser(e.target.value)} value={user}/>
             </div>
             <div className="contenedor-Logueo">
-                <label className="label-login">Contraseña</label>
                 <input type="password" placeholder="Contraseña" className="input input-login" onChange={( e : any )=> setPwd(e.target.value)} value={pwd}/>
             </div>
 
@@ -98,7 +95,7 @@ export function Login(props : any){
             }
             {admin == true &&
                 <>
-                    <button type="submit" onClick={loguear} className="boton boton-amarillo btn-logueo">Iniciar Sesion</button>
+                    <input type="button" onClick={loguear} className="boton boton-amarillo btn-logueo" value="Iniciar Sesion"></input>
                     <p>Estas en el modo Administrador, Inicia Sesion Para Administrar la Aplicacion</p>
                 </>
             }
