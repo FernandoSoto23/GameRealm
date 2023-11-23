@@ -49,16 +49,9 @@ export function Contenido(){
             boleanActualizado =true;
             break;
     }
-    const MostrarUsuario = ()=>{
-        let usuarioGameRealm  : any = localStorage.getItem("UsuarioGameRealm");
-        usuarioGameRealm = JSON.parse(usuarioGameRealm);
-        console.log(usuarioGameRealm["nombreUsuario"])
-        if(usuarioGameRealm !== null){
-            setId(usuarioGameRealm["id"]);
-        }
-    }
+   
     useEffect(()=>{
-        MostrarUsuario();
+       
     },[]);
     return(
         <div>

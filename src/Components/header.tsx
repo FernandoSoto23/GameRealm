@@ -11,7 +11,6 @@ export function Header() {
     const MostrarUsuario = ()=>{
         let usuarioGameRealm  : any = localStorage.getItem("UsuarioGameRealm");
         usuarioGameRealm = JSON.parse(usuarioGameRealm);
-        console.log(usuarioGameRealm["nombreUsuario"])
         if(usuarioGameRealm !== null){
             setNombreUsuario(usuarioGameRealm["nombreUsuario"]);
         }

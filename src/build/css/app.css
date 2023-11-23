@@ -1338,3 +1338,9 @@ input.input-number {
   background-color: transparent;
   margin-left: 94%;
 }
+
+.perfil-contenedor .contenedor-botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
