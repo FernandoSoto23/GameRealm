@@ -1,13 +1,12 @@
 import path from "path";
 import { useState, useEffect} from "react";
 import { NavLink } from "react-router-dom";
-
-//menu fixed
+import { WebServiceUrl } from "../clases/rutas";
 
 
 export function Header() {
     const [nombreUsuario,setNombreUsuario] = useState("");
-
+    const [buscar,setBuscar] = useState();
     const MostrarUsuario = ()=>{
         let usuarioGameRealm  : any = localStorage.getItem("UsuarioGameRealm");
         usuarioGameRealm = JSON.parse(usuarioGameRealm);
@@ -15,7 +14,13 @@ export function Header() {
             setNombreUsuario(usuarioGameRealm["nombreUsuario"]);
         }
     }
-    
+    const BuscarItem = async ()=>{
+        const url = `${WebServiceUrl}/api/titulo`;
+        const resp = await fetch(url);
+        const datos = await resp.json();
+
+        console.log(datos)
+    }
     useEffect(()=>{
         MostrarUsuario();
     },[]);
@@ -30,15 +35,14 @@ export function Header() {
         <header className="header">
             <nav className="header-navegacion">
                 <div className="buscar-producto">
-                    <input className="input" type="text" placeholder="Buscar" />
-                    <button className="boton boton-buscar"></button>
+                    <input className="input" type="text" placeholder="Buscar" onChange={(e : any)=>setBuscar(e.target.value)}/>
+                    <button className="boton boton-buscar" onClick={()=>{BuscarItem()}}></button>
                 </div>
 
                 <div>
                     <ul className="header-ul">
                         <NavLink to="/Home" className={(({ isActive }) => isActive ? 'activo' : '')}>
                             <li className="boton header-botones">
-
                                 <p>Inicio</p>
                             </li>
                         </NavLink>

@@ -1222,14 +1222,18 @@ input.input-number {
 .contenedor-padre .card-registrarUsuario {
   box-shadow: 7px 0px 13px 4px rgba(0, 0, 0, 0.49);
   border-radius: 0rem 1rem 1rem 0rem;
-  background-color: #030e14;
+  background: rgb(3, 14, 20);
+  background: linear-gradient(90deg, rgb(3, 14, 20) 0%, rgb(5, 66, 86) 60%, rgb(5, 66, 86) 80%);
   width: 50rem;
   padding: 1rem;
   border: none;
 }
 .contenedor-padre .card-registrarUsuario h1 {
+  background: rgb(34, 195, 193); /* Fondo de color sólido */
+  background: linear-gradient(0deg, rgb(34, 195, 193) 14%, rgb(255, 255, 255) 69%); /* Degradado lineal */
+  -webkit-background-clip: text;
+  color: transparent;
   text-align: center;
-  color: white;
 }
 .contenedor-padre .card-registrarUsuario .seccion-fila {
   display: flex;
@@ -1239,7 +1243,38 @@ input.input-number {
   margin: 0.3rem 0.1rem;
   width: 100%;
   height: 1%;
-  border-radius: 1rem;
+  background-color: #357e92;
+  color: white;
+}
+.contenedor-padre .card-registrarUsuario .input::placeholder {
+  color: white;
+}
+.contenedor-padre .card-registrarUsuario .css-13cymwt-control {
+  background-color: red;
+  /* Estilos globales para todos los Select */
+}
+.contenedor-padre .card-registrarUsuario .css-t3ipsp-control {
+  background-color: red;
+  /* Estilos globales para todos los Select */
+}
+.contenedor-padre .card-registrarUsuario .css-1nmdiq5-menu {
+  background-color: red;
+  /* Estilos globales para todos los Select */
+}
+.contenedor-padre .card-registrarUsuario .css-1nmdiq5-menu:focus {
+  background-color: yellow;
+}
+.contenedor-padre .card-registrarUsuario .select__control {
+  /* Estilos para el contenedor del control */
+  background-color: red;
+}
+.contenedor-padre .card-registrarUsuario .select__menu {
+  /* Estilos para el menú desplegable */
+  background-color: red;
+}
+.contenedor-padre .card-registrarUsuario .select__option {
+  /* Estilos para cada opción en el menú desplegable */
+  background-color: red;
 }
 .contenedor-padre .card-registrarUsuario .boton-orientacion {
   display: flex;
@@ -1263,7 +1298,7 @@ input.input-number {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
-  color: red;
+  color: rgb(0, 0, 0);
   width: 50%;
   margin: 0 auto;
 }
