@@ -594,6 +594,8 @@ h3 {
   .header .header-navegacion .card-login-carrito {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 20rem;
   }
   .header .header-navegacion .boton-buscar {
     background-image: url(../../build/img/lupa.png);
@@ -644,6 +646,20 @@ h3 {
   width: 50rem;
   margin-right: 1rem;
 }
+.header-navegacion .buscar-producto .resultados-busqueda-barra {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 30%;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.header-navegacion .buscar-producto .resultado-busqueda-item {
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
 .header-navegacion .buscar-producto .input {
   margin: 0 1rem;
   width: 100%;
@@ -686,19 +702,11 @@ h3 {
     position: fixed;
   }
 }
-.container .card-container {
-  text-align: right;
-  justify-content: left;
-  width: 100px;
-  height: 30rem;
-  font-size: 5px;
-}
-.container .card-deck {
-  text-align: right;
-  justify-content: center;
-  width: 500px;
-  height: 30rem;
-  font-size: 15px;
+/* Agrega estos estilos a tu archivo CSS */
+.activo {
+  color: #ff0000; /* Cambia esto al color que desees */
+  font-weight: bold; /* Puedes ajustar el peso de la fuente según sea necesario */
+  /* Agrega otros estilos según sea necesario */
 }
 
 .barra {
@@ -899,7 +907,7 @@ h3 {
 }
 
 .contenedor-barra {
-  background-color: #357e92;
+  background-color: #ededed;
   height: 120rem;
   /*     @include tablet() {
           display: grid;
@@ -926,99 +934,6 @@ h3 {
   .contenedor-barra {
     height: 120rem;
   }
-}
-
-@media (min-width: 768px) {
-  .menu-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .menu-grid h3 {
-    font-size: 2.5rem;
-  }
-  .menu-grid p {
-    font-size: 1.5rem;
-  }
-  .menu-orden {
-    width: 50%;
-  }
-}
-@media (min-width: 1600px) {
-  .menu-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-.contenido-producto {
-  border-radius: 5rem 0rem;
-}
-.contenido-producto h3,
-.contenido-producto p {
-  color: #000000;
-  padding: 0 1rem;
-  margin: 0;
-}
-.contenido-producto h3 {
-  font-weight: 700;
-}
-.contenido-producto .boton-largo {
-  margin: 0 1.5rem;
-  border-radius: 5rem 0rem;
-}
-.contenido-producto .span-precio {
-  font-weight: 700;
-  color: #22a14a;
-}
-.contenido-producto .envio {
-  font-size: 1.5rem;
-  color: rgb(112, 112, 112);
-}
-
-/* orden */
-.contenedor-contador {
-  display: flex;
-  width: 8rem;
-  border-radius: 0.5rem;
-  border: 1px solid rgb(167, 166, 166);
-  margin: 1rem;
-}
-
-.btn-numerar {
-  color: white;
-  font-size: 2rem;
-  font-weight: 700;
-  border: none;
-  width: 3rem;
-  background-color: rgb(8, 196, 8);
-  border-radius: 0.5rem;
-}
-
-.input-number {
-  width: 3rem;
-  padding: 0.5rem;
-  font-weight: 700;
-}
-
-input.input-number::-webkit-outer-spin-button,
-input.input-number::-webkit-inner-spin-button,
-input.input-number {
-  -webkit-appearance: none;
-}
-
-.añadir-carrito {
-  display: flex;
-  align-items: center;
-}
-
-.ver-mas {
-  font-weight: 700;
-}
-
-.imagen-recortada {
-  width: 500px;
-  height: 300px;
-  object-fit: cover;
-  background-color: black;
 }
 
 .DarkMode {
@@ -1198,10 +1113,26 @@ input.input-number {
   margin: 0 auto;
 }
 
-.containerResumen {
-  border: 1px solid black;
-  width: 72rem;
-  margin: 0 auto;
+.CardResumen {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  font-size: large;
+  width: 50rem;
+  margin: 50px auto;
+  text-align: center;
+}
+.CardResumen .card-group {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+}
+.CardResumen .col-md-5 {
+  display: flex;
+  justify-content: center;
+}
+.CardResumen .col-md-5 button {
+  margin: 50px;
 }
 
 .contenedor-padre {
@@ -1329,19 +1260,10 @@ input.input-number {
   height: 50rem;
   padding: 1rem;
 }
-.contenido-padre .card-producto .seccion-columna {
-  display: flex;
-  flex-direction: column;
-}
-.contenido-padre .card-producto .seccion-fila {
+.contenido-padre .card-producto .AlinearColumna {
   display: flex;
   flex-direction: row;
-}
-.contenido-padre .card-producto .margen-left {
-  margin-left: 20rem;
-}
-.contenido-padre .card-producto .margen-top {
-  margin-top: 0.3rem;
+  align-items: center;
 }
 .contenido-padre .card-producto .separador {
   text-align: end;
@@ -1392,4 +1314,104 @@ input.input-number {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+}
+
+.contenedor {
+  margin-top: 5rem;
+}
+
+@media (min-width: 768px) {
+  .menu-grid {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .menu-grid h3 {
+    font-size: 2.5rem;
+  }
+  .menu-grid p {
+    font-size: 1.5rem;
+  }
+  .menu-orden {
+    width: 50%;
+  }
+}
+@media (min-width: 1600px) {
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.contenido-producto {
+  background-color: #FFFFFF;
+  border-radius: 5rem 0rem;
+}
+.contenido-producto h3,
+.contenido-producto p {
+  color: #000000;
+  padding: 0 1rem;
+  margin: 0;
+}
+.contenido-producto h3 {
+  font-weight: 700;
+}
+.contenido-producto .boton-largo {
+  margin: 0 1.5rem;
+  border-radius: 5rem 0rem;
+}
+.contenido-producto .span-precio {
+  font-weight: 700;
+  color: #22a14a;
+}
+.contenido-producto .envio {
+  font-size: 1.5rem;
+  color: rgb(112, 112, 112);
+}
+
+/* orden */
+.contenedor-contador {
+  display: flex;
+  width: 8rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(167, 166, 166);
+  margin: 1rem;
+}
+
+.btn-numerar {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  border: none;
+  width: 3rem;
+  background-color: rgb(8, 196, 8);
+  border-radius: 0.5rem;
+}
+
+.input-number {
+  width: 3rem;
+  padding: 0.5rem;
+  font-weight: 700;
+}
+
+input.input-number::-webkit-outer-spin-button,
+input.input-number::-webkit-inner-spin-button,
+input.input-number {
+  -webkit-appearance: none;
+}
+
+.añadir-carrito {
+  display: flex;
+  align-items: center;
+}
+
+.ver-mas {
+  font-weight: 700;
+}
+
+.imagen-recortada {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+  background-color: black;
 }

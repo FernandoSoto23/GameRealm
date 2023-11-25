@@ -67,6 +67,9 @@
             .card-login-carrito{
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
+                width: 20rem;
+                
             }
             .boton-buscar {
                 background-image: url(../../build/img/lupa.png);
@@ -126,10 +129,29 @@
         align-items: center;
         width: 50rem;
         margin-right: 1rem;
+        
+        .resultados-busqueda-barra {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 30%;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+         
+          }
+          
+          .resultado-busqueda-item {
+            padding: 1rem;
+            border-bottom: 1px solid #ccc;
+          }
 
         .input {
             margin: 0 1rem;
             width: 100%;
+            
+            
         }
 
     }
@@ -178,24 +200,11 @@
         position: fixed;
     }
 }
+/* Agrega estos estilos a tu archivo CSS */
 
-.container {
-    .card-container {
-        text-align: right;
-        justify-content: left;
-        width: 100px;
-        height: 30rem;
-        font-size: 5px;
-
-    }
-
-    .card-deck {
-        text-align: right;
-        justify-content: center;
-        width: 500px;
-        height: 30rem;
-        font-size: 15px;
-
-    }
-
-}
+.activo {
+    color: #ff0000; /* Cambia esto al color que desees */
+    font-weight: bold; /* Puedes ajustar el peso de la fuente según sea necesario */
+    /* Agrega otros estilos según sea necesario */
+  }
+  

@@ -23,19 +23,10 @@
         width: 100rem;
         height: 50rem;
         padding: 1rem;
-        .seccion-columna{
-            display: flex;
-            flex-direction: column;
-        }
-        .seccion-fila{
+        .AlinearColumna{
             display: flex;
             flex-direction: row;
-        }
-        .margen-left{
-            margin-left: 20rem;
-        }
-        .margen-top{
-            margin-top: 0.3rem;
+            align-items: center;
         }
         .separador{
             text-align:end;
