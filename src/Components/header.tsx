@@ -6,6 +6,7 @@ import {
   faCartArrowDown,
   faCartShopping,
   faRightFromBracket,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/logoheader.png";
 import { WebServiceUrl } from "../clases/rutas";
@@ -13,7 +14,7 @@ import { WebServiceUrl } from "../clases/rutas";
 export function Header() {
   const [nombreUsuario, setNombreUsuario] = useState("");
   const [resultadosBusqueda, setResultadosBusqueda] = useState([]);
-  const [busqueda,setBusqueda] = useState("");
+  const [busqueda, setBusqueda] = useState("");
   const MostrarUsuario = () => {
     let usuarioGameRealm: any = localStorage.getItem("UsuarioGameRealm");
     usuarioGameRealm = JSON.parse(usuarioGameRealm);
@@ -48,22 +49,21 @@ export function Header() {
       console.log("No se hizo");
     }
   };
-  const GuardarBusqueda = (event : any)=>{
-      localStorage.setItem("busqueda",event);
-  }
+  const GuardarBusqueda = (event: any) => {
+    localStorage.setItem("busqueda", event);
+  };
   return (
     <header className="header">
       <nav className="header-navegacion">
-      
         <div className="buscar-producto">
-        <img src={logo} className="logo" />
+          <img src={logo} className="logo" />
           <input
             className="input"
             type="text"
             placeholder="Buscar"
-            onChange={(e)=>GuardarBusqueda(e.target.value)}
+            onChange={(e) => GuardarBusqueda(e.target.value)}
             onClick={() => BuscarItem()}
-            onKeyUp={(e : any) => {
+            onKeyUp={(e: any) => {
               if (e.key === "Enter") {
                 window.location.href = "./../CatalogoBusqueda";
               }
@@ -99,16 +99,22 @@ export function Header() {
                 <p>Categorias</p>
               </li>
             </NavLink>
-            
           </ul>
         </div>
 
         <div className="card-login-carrito">
           {nombreUsuario !== "" ? (
-            <NavLink to="./Perfil" className="card-login-carrito-nombre">{nombreUsuario}</NavLink>
+            <NavLink to="./Perfil" className="card-login-carrito-nombre">
+              <div>
+              <FontAwesomeIcon icon={faUser} style={{color: "#ffffff",}} />
+              </div>
+              <div>
+                <p>{nombreUsuario}</p>
+              </div>
+            </NavLink>
           ) : (
             <NavLink to="./Login" style={{ color: "white" }}>
-              <FontAwesomeIcon icon={faRightFromBracket}></FontAwesomeIcon>
+              <FontAwesomeIcon style={{backgroundColor:"white"}} icon={faRightFromBracket}></FontAwesomeIcon>
               Iniciar Sesion
             </NavLink>
           )}

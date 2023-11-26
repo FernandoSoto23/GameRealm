@@ -574,6 +574,7 @@ h3 {
   .header .header-navegacion {
     width: 100%;
     margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -604,8 +605,18 @@ h3 {
     width: 20rem;
   }
   .header .header-navegacion .card-login-carrito .card-login-carrito-nombre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 200rem;
+  }
+  .header .header-navegacion .card-login-carrito .card-login-carrito-nombre p {
     color: #FFFFFF;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-left: 0.5rem;
   }
   .header .header-navegacion .boton-buscar {
     background-image: url(../../build/img/lupa.png);
@@ -623,7 +634,7 @@ h3 {
   }
   .header .header-navegacion .carrito p {
     color: #FFFFFF;
-    margin-right: 3rem;
+    margin-right: 1.5rem;
   }
   .header .header-navegacion .carrito img {
     width: 5rem;
