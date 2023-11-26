@@ -45,6 +45,10 @@ export const Perfil = (props: any) => {
       console.error("nuevos errores" + error);
     }
   }
+ function LogOut(){
+  localStorage.removeItem("UsuarioGameRealm");
+  window.location.href ="./home";
+ }
 
   /*   function usuariolog(){
     let idUsuario : any = localStorage.getItem("usuario");
@@ -176,6 +180,9 @@ export const Perfil = (props: any) => {
                           </div>
                         </div>
                         <hr />
+                        <div className="btn-cerrarSesion">
+                        <Button onClick={LogOut}  color="danger"> Cerrar sesión</Button>
+                        </div>
                       </div>
                     </div>
                   </div>

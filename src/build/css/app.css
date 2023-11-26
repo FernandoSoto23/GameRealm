@@ -1556,6 +1556,10 @@ span {
   justify-content: flex-end;
 }
 
+.btn-cerrarSesion {
+  text-align: right;
+}
+
 @media (min-width: 768px) {
   .categoria-grid {
     width: 90%;
