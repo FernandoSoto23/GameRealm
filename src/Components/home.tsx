@@ -26,7 +26,10 @@ import imagen23 from '../assets/Watch_Dogs® 2.jpg';
 import imagen24 from '../assets/Borderlands 3.png';
 import imagen25 from '../assets/fifa23.jpg';
 import imagen26 from '../assets/PGA TOUR 2K23.jpg';
-import imagen27 from '../assets/minecraft.png'
+import imagen27 from '../assets/minecraft.png';
+import imagen28 from '../assets/The elder scrolls VI.png';
+import imagen29 from '../assets/COD MW 2.png';
+import imagen30 from '../assets/DBZ Kakarot.png';
 
 export function Home() {
 
@@ -159,6 +162,15 @@ export function Home() {
         </div>
         <div className="contenido-home">
           <img src={`${imagen27}`} className="imagen-recortada" />
+        </div>
+        <div className="contenido-home">
+          <img src={`${imagen28}`} className="imagen-recortada" />
+        </div>
+        <div className="contenido-home">
+          <img src={`${imagen29}`} className="imagen-recortada" />
+        </div>
+        <div className="contenido-home">
+          <img src={`${imagen30}`} className="imagen-recortada" />
         </div>
 
 
