@@ -97,6 +97,7 @@ export function Header() {
                 <p>Categorias</p>
               </li>
             </NavLink>
+            
           </ul>
         </div>
 
