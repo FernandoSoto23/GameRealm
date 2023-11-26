@@ -29,8 +29,9 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const BuscarItem = async () => {
+    localStorage.setItem("busqueda", " ");
     if (!localStorage.getItem("BusquedaDeItemsGameRealm")) {
-      const url = `${WebServiceUrl}/api/titulo`;
+      const url = `${WebServiceUrl}/api/titulo/ListarTitulos`;
       const resp = await fetch(url);
       const datos = await resp.json();
 
@@ -44,7 +45,7 @@ export function Header() {
 
       console.log(datos);
     } else {
-      console.log("NO se hizo");
+      console.log("No se hizo");
     }
   };
   const GuardarBusqueda = (event : any)=>{
@@ -96,6 +97,7 @@ export function Header() {
                 <p>Categorias</p>
               </li>
             </NavLink>
+            
           </ul>
         </div>
 

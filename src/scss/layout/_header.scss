@@ -1,6 +1,5 @@
 .header {
     display: none;
-    background-color: $grisNavegacion;
     width: 100%;
 
     .input {
@@ -30,7 +29,6 @@
             position: fixed;
             z-index: 10;
             top: 0;
-            background-color: $grisNavegacion;
             width: 100%;
             height: 5rem;
             display: flex;
@@ -120,7 +118,7 @@
 
 /* Aqui puedes edditar */
 .header-navegacion {
-    background-color: #0e323c;
+    background-color: #0e323ce6;
     display: flex;
     width: 100%;
     justify-content: center;
