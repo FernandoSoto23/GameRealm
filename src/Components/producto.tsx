@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping, faGamepad, faGlobe, faKey } from '@fortawesome/free-solid-svg-icons';
-import VideoModal from './modal';
 import React, { useState } from 'react';
 import ModalVideo from './modal';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
@@ -22,12 +21,13 @@ export function Producto() {
                         <img src="https://i.ibb.co/qBrd2tN/minecraftr.jpg" />
                         <div>
                             <button className='boton-trailer' onClick={openModal}>Ver trailer <span><FontAwesomeIcon icon={faYoutube} style={{color: "#fd0808",}} size='lg' /></span></button>
-
                             {showModal && (
-                                <ModalVideo
+                                <div className='modal'>
+                                    <ModalVideo
                                     videoSrc="https://www.youtube-nocookie.com/embed/MmB9b5njVbA?si=JjXcoaUwSQ-9gfPo"
                                     onClose={closeModal}
                                 />
+                                </div>
                             )}
                         </div>
                     </div>

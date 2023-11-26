@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       
-      <div className='contenedor-barra'>
+      <div className='contenedor-barra' >
         <Header></Header>
         <Barra/>
         <Contenido></Contenido>

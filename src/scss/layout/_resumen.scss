@@ -94,21 +94,22 @@
                 height: 15%;
             }   
             .card-body{
-                border: solid black;
+                // border: solid black;
                 height: 85%;
 
                 .btn-compra{
                     padding-top: 1rem;
                     text-align: center;
+                    border: none;
                 }
                 .card-resumen{
                     display: flex;
                     font-size: 1.2;
                     list-style-type: none;
-                    // flex-direction: row;
+                    flex-direction: column;
+                    margin-top: 3rem;
                     .span{
-                    flex: 1;
-                    text-align: right;
+                        padding-left: 50%;
                     }
                 }
             }    

@@ -16,13 +16,17 @@
     .card-registrarUsuario{
         box-shadow: 7px 0px 13px 4px rgba(0,0,0,0.49);
         border-radius: 0rem 1rem 1rem 0rem;
-        background-color: #030e14;
+        background: rgb(3,14,20);
+        background: linear-gradient(90deg, rgba(3,14,20,1) 0%, rgba(5,66,86,1) 60%, rgba(5,66,86,1) 80%);
         width: 50rem;
         padding: 1rem;
         border: none;
         h1{
+            background: rgb(34, 195, 193); /* Fondo de color sólido */
+            background: linear-gradient(0deg, rgba(34, 195, 193, 1) 14%, rgba(255, 255, 255, 1) 69%); /* Degradado lineal */
+            -webkit-background-clip: text;
+            color: transparent;
             text-align: center;
-            color: white;
         }
         .seccion-fila{
             display: flex;
@@ -32,8 +36,43 @@
             margin: .3rem .1rem;
             width: 100%;
             height: 1%;
-            border-radius: 1rem;
+            background-color: #357e92;
+            color: white;
+            &::placeholder{
+                color: white;
+            }
+
         }
+        .css-13cymwt-control {
+            background-color: red;
+            /* Estilos globales para todos los Select */
+          }
+          .css-t3ipsp-control {
+            background-color: red;
+            /* Estilos globales para todos los Select */
+          }
+          .css-1nmdiq5-menu {
+            background-color: red;
+            /* Estilos globales para todos los Select */
+            &:focus{
+                background-color: yellow;
+            }
+          }
+
+          .select__control {
+            /* Estilos para el contenedor del control */
+            background-color: red;
+          }
+          
+          .select__menu {
+            /* Estilos para el menú desplegable */
+            background-color: red;
+          }
+          
+          .select__option {
+            /* Estilos para cada opción en el menú desplegable */
+            background-color: red;
+          }
         .boton-orientacion{
             display: flex;
             flex-direction: row;
@@ -56,10 +95,12 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 0;
-            color: red;
+            color: rgb(0, 0, 0);
             width: 50%;
             margin: 0 auto;
         }
     }
 }
+
+
 

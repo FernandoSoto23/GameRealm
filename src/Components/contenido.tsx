@@ -17,7 +17,9 @@ import { Orden } from "./orden";
 import { RegistrarUsuario } from "./RegistrarUsuario";
 import { Producto } from "./producto";
 import { Perfil } from "./perfil";
-import { Resumen } from "./resumen";
+import { Categorias } from "./categorias";
+import { CatalogoBusqueda } from "./catalogoBusqueda";
+import {Resumen} from "./resumen";
 
 export function Contenido(){
     const [id,setId] = useState();
@@ -27,7 +29,7 @@ export function Contenido(){
     let Ruta = location.pathname + location.search;
     
     switch(Ruta){
-        case `/ComidaRapida/Orden${location.search}` :
+        case `/CatalogoBusqueda/Orden${location.search}` :
             checar = true;
             break;
         case `/Ensaladas/Orden${location.search}` :
@@ -54,7 +56,7 @@ export function Contenido(){
        
     },[]);
     return(
-        <div>
+        <div style={{backgroundColor:"#ededed"}}>
             <div className="contenido">
                 <NavLink to="./Carrito">
                     <h3>Carrito</h3>
@@ -70,8 +72,11 @@ export function Contenido(){
                             
                     <Route path="/Carrito" element={<Carrito/>}> </Route>
                     <Route path="/Biblioteca" element={<Producto/>}> </Route>
-                    <Route path="/Categoria" element={<Menu Tipo={2} />}> </Route>
-                    
+                    <Route path="/Titilo" element={<Menu Tipo={2} />}> </Route>
+
+                    <Route path="/Categorias" element={<Categorias />}> </Route>
+                    <Route path="/CatalogoBusqueda" element={<CatalogoBusqueda />}> </Route>
+
                     <Route path="/Desayunos" element={<Menu Tipo={3} />}> </Route>
                     <Route path="/Bebidas" element={<Menu Tipo={4} />}> </Route>
                     <Route path="/Postres" element={<Menu Tipo={5} />}> </Route>
