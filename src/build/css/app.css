@@ -613,9 +613,11 @@ h3 {
   }
   .header .header-navegacion .card-login-carrito .card-login-carrito-nombre .perfil {
     display: flex;
+    align-items: center;
   }
   .header .header-navegacion .card-login-carrito .card-login-carrito-nombre .cerrar-sesion {
     display: flex;
+    align-items: center;
   }
   .header .header-navegacion .card-login-carrito .card-login-carrito-nombre p {
     color: #FFFFFF;

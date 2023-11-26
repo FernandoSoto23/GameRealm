@@ -127,10 +127,7 @@ export function Header() {
                   <p>{nombreUsuario}</p>
                 </div>
               </NavLink>
-              <div
-                className="cerrar-sesion"
-                onClick={() => CerrarSesion()}
-                style={{ cursor: "pointer", userSelect: "none" }}
+              <div className="cerrar-sesion" onClick={() => CerrarSesion()} style={{ cursor: "pointer", userSelect: "none" }}
               >
                 <div style={{ borderInlineStart: "1px solid white" }}>
                   <p style={{ margin: "0 1rem" }}>Cerrar Sesion</p>
@@ -156,14 +153,12 @@ export function Header() {
                 />
                 <p>Iniciar Sesion</p>
               </NavLink>
-              <div style={{borderInlineStart: "1px solid white" }}></div>
+              <div style={{ borderInlineStart: "1px solid white" }}></div>
               <NavLink
                 to="./RegistrarUsuario"
                 className="crear-cuenta"
-                style={{ color: "white"}}
-                
+                style={{ color: "white" }}
               >
-                
                 <p>Registrarse</p>
                 <FontAwesomeIcon icon={faPlus} style={{ color: "#ffffff" }} />
               </NavLink>
