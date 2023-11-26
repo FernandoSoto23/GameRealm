@@ -517,6 +517,7 @@ h3 {
   margin: 0;
   text-align: center;
   font-size: 1.5rem;
+  color: white;
 }
 .contenedor-login .btn-crearCuenta {
   background-color: rgb(170, 170, 170);
@@ -1119,7 +1120,6 @@ h3 {
 }
 
 .contenedor-objetos {
-  background-color: aqua;
   display: flex;
   flex-direction: row;
   width: 100rem;
@@ -1127,17 +1127,21 @@ h3 {
   margin-top: 5rem;
 }
 .contenedor-objetos .card-derecha {
+  border-radius: 1rem;
+  border: solid rgb(187, 187, 187) 0.1rem;
   width: 70%;
   height: 100%;
+  margin-right: 5%;
+  background-color: white;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
 }
 .contenedor-objetos .card-derecha .card-header {
+  border-bottom: solid rgb(187, 187, 187) 0.1rem;
   width: 100%;
   height: 15%;
-  display: flex;
-  flex-direction: row;
+  text-align: center;
 }
 .contenedor-objetos .card-derecha .card-body {
-  background-color: blueviolet;
   width: 100%;
   height: 70%;
   display: flex;
@@ -1156,17 +1160,24 @@ h3 {
   width: 35%;
 }
 .contenedor-objetos .card-derecha .card-body .p {
+  font-weight: 10rem;
   padding: 1rem;
 }
-.contenedor-objetos .card-derecha .card-body .precio {
+.contenedor-objetos .card-derecha .card-body .cantidad {
   align-items: right;
   display: flex;
   flex-direction: row;
   margin-top: 7rem;
   width: 35%;
 }
-.contenedor-objetos .card-derecha .card-body .precio .btn {
-  border-color: aqua;
+.contenedor-objetos .card-derecha .card-body .cantidad .precio {
+  margin-left: 1.5rem;
+}
+.contenedor-objetos .card-derecha .card-body .cantidad .contador {
+  margin: 0rem 1rem;
+}
+.contenedor-objetos .card-derecha .card-body .cantidad .btn {
+  border-color: #054256;
   width: 3rem;
   height: 3rem;
   font-size: 1.2rem;
@@ -1187,28 +1198,38 @@ h3 {
   height: 15%;
 }
 .contenedor-objetos .card-derecha .card-footer .p {
+  text-align: center;
+  border-top: solid rgb(187, 187, 187) 0.1rem;
   font-style: italic;
   font-weight: 700;
-  text-align: end;
   font-size: 1rem;
   font-size: small;
   color: #9B9B9B;
 }
 .contenedor-objetos .card-izquierda {
-  background-color: burlywood;
+  border-radius: 1rem;
   width: 30%;
   height: 100%;
+  background-color: white;
+  border: solid rgb(187, 187, 187) 0.1rem;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
 }
-.contenedor-objetos .card-izquierda .card-footer {
-  border: solid black;
+.contenedor-objetos .card-izquierda .card-header {
+  border-bottom: solid rgb(187, 187, 187) 0.1rem;
   height: 15%;
+  text-align: center;
 }
 .contenedor-objetos .card-izquierda .card-body {
+  padding-top: 2rem;
   height: 85%;
 }
 .contenedor-objetos .card-izquierda .card-body .btn-compra {
-  padding-top: 1rem;
-  text-align: center;
+  height: 4rem;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  background-color: #054256;
+  color: white;
+  margin-left: 5rem;
   border: none;
 }
 .contenedor-objetos .card-izquierda .card-body .card-resumen {
@@ -1217,9 +1238,18 @@ h3 {
   list-style-type: none;
   flex-direction: column;
   margin-top: 3rem;
+  padding-left: 1rem;
+}
+.contenedor-objetos .card-izquierda .card-body .card-resumen .linea {
+  border-bottom: #9B9B9B;
+  width: 100%;
 }
 .contenedor-objetos .card-izquierda .card-body .card-resumen .span {
   padding-left: 50%;
+}
+.contenedor-objetos .card-izquierda .card-footer {
+  padding-top: 1rem;
+  border-top: solid rgb(187, 187, 187) 0.1rem;
 }
 
 .contenedor-padre {

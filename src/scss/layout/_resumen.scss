@@ -1,27 +1,28 @@
 
     .contenedor-objetos{
-        // border: solid black;
-        background-color: aqua;
         display: flex;
         flex-direction: row;
         width: 100rem;
         height: 25rem;
         margin-top: 5rem;
+
         .card-derecha{
+            border-radius: 1rem;
+            border: solid rgb(187, 187, 187) 0.1rem;
             width: 70%;
             height: 100%;
+            margin-right: 5%;
+            background-color: white;
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.20);
             // margin-right: 5rem;
             .card-header{
-                // border: solid black;
+                border-bottom: solid rgb(187, 187, 187) 0.1rem;
                 width: 100%;
                 height: 15%;
-                display: flex;
-                flex-direction: row;
-    
+                text-align: center;
+                
             }
             .card-body{
-                // border: solid black;
-                background-color: blueviolet;
                 width: 100%;
                 height: 70%;
                 display: flex;
@@ -39,17 +40,25 @@
                     width: 35%;
                 } 
                 .p{
+                    font-weight: 10rem;
                     padding: 1rem;
                 }
-                .precio{
+                .cantidad{
                     align-items: right;
                     display: flex;
                     flex-direction: row;
                     margin-top: 7rem;
                     // padding-left: 10rem;
                     width: 35%;
+                    .precio{
+                        margin-left: 1.5rem;
+
+                    }
+                    .contador{
+                        margin:0rem 1rem;
+                    }
                     .btn{
-                        border-color: aqua;
+                        border-color: #054256;
                         width: 3rem;
                         height: 3rem;   
                         font-size: 1.2rem;
@@ -75,9 +84,10 @@
                 width: 100%;
                 height: 15%;
                 .p{
+                    text-align: center;
+                    border-top: solid rgb(187, 187, 187) 0.1rem;
                     font-style: italic;
                     font-weight: 700;
-                    text-align:end;
                     font-size: 1rem;
                     font-size: small;
                     color: #9B9B9B;
@@ -85,21 +95,27 @@
             }
         }
         .card-izquierda{
-            // border: solid black;
-            background-color: burlywood;
+            border-radius: 1rem;
             width: 30%;
-            height: 100%; 
-            .card-footer{
-                border: solid black;
+            height: 100%;
+            background-color: white;
+            border: solid rgb(187, 187, 187) 0.1rem;
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.20);
+            .card-header{
+                border-bottom: solid rgb(187, 187, 187) 0.1rem;
                 height: 15%;
+                text-align: center;
             }   
             .card-body{
-                // border: solid black;
+                padding-top: 2rem;
                 height: 85%;
-
                 .btn-compra{
-                    padding-top: 1rem;
-                    text-align: center;
+                    height: 4rem;
+                    padding: 1rem;
+                    border-radius: .3rem;
+                    background-color: #054256;
+                    color: white;
+                    margin-left: 5rem;
                     border: none;
                 }
                 .card-resumen{
@@ -108,11 +124,19 @@
                     list-style-type: none;
                     flex-direction: column;
                     margin-top: 3rem;
+                    padding-left: 1rem;
+                    .linea{
+                        border-bottom: #9B9B9B;
+                        width: 100%;
+                    }
                     .span{
                         padding-left: 50%;
                     }
                 }
             }    
-
+            .card-footer{
+                padding-top: 1rem;
+                border-top: solid rgb(187, 187, 187) 0.1rem;
+            }
         }
     }
