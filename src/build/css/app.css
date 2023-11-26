@@ -1593,6 +1593,10 @@ span {
   justify-content: flex-end;
 }
 
+.btn-cerrarSesion {
+  text-align: right;
+}
+
 @media (min-width: 768px) {
   .categoria-grid {
     width: 90%;
@@ -1620,7 +1624,6 @@ span {
   width: 90%;
   height: 90%;
   margin: 3rem;
-  background-color: #054256;
   border-radius: 0.5rem;
 }
 .contenido-categoria h3,
