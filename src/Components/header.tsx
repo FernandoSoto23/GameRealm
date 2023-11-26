@@ -1,6 +1,6 @@
 import path from "path";
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartArrowDown,
@@ -56,7 +56,10 @@ export function Header() {
     <header className="header">
       <nav className="header-navegacion">
         <div className="buscar-producto">
-          <img src={logo} className="logo" />
+          <Link to={"./Home"}>
+            <img src={logo} className="logo" />
+          </Link>
+         
           <input
             className="input"
             type="text"

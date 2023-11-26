@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 export const Biblioteca = () => {
   const [biblioteca,setBiblioteca] = useState([]);
   const [bibliotecaVacia,setBibliotecaVacia] = useState(false);
+  const [usuarioLogOut,setUsuarioLogOut] = useState(false);
   const CrearBiblioteca = async () => {
 
     
@@ -20,9 +21,10 @@ export const Biblioteca = () => {
       const datos = await resp.json();
       if (datos.msg === "ok") {
         setBiblioteca(datos.dato);
+
       }
     }else{
-    setBibliotecaVacia(true);
+      setUsuarioLogOut(true);
     }
 
   };
@@ -33,7 +35,14 @@ export const Biblioteca = () => {
   return (
     <div className='menu-grid'>
 
-        {bibliotecaVacia && <h1 style={{marginTop : "5rem"}}>La biblioteca se encuentra sin juegos</h1>}
+        {(usuarioLogOut === true || bibliotecaVacia) && 
+        <div style={{margin: "10rem"}}>
+          <h1>
+            La biblioteca se encuentra sin juegos
+          </h1>
+          
+        </div>  
+        }
         {
             biblioteca &&
              biblioteca.map( (b : any) => (
