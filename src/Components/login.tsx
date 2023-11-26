@@ -71,7 +71,7 @@ export function Login(props : any){
     //para logueo de admin
 
     return(
-        <div className="contenedor card-contenido contenedor-login">
+        <div className="contenedor card-contenido contenedor-login" style={{marginTop: "10rem"}}>
             <img className="img-login" src={imagen} alt="" />
             <div className="contenedor-Logueo">
                 <input type="email" placeholder="Correo Electronico" className="input input-login" onChange={( e : any )=>setUser(e.target.value)} value={user}/>

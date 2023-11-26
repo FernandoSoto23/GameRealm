@@ -128,7 +128,7 @@ export function RegistrarUsuario() {
     }
   };
   return (
-    <div style={{ margin: "0 auto", width: "100rem" }}>
+    <div style={{ margin: "0 auto", width: "100rem" , marginTop : "10rem",marginBottom : "10rem"}}>
       <div className="contenedor-padre">
         <div className="card-logo">
           <img className="RUsuario" src={imagen} alt="" />

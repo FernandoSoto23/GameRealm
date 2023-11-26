@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/logo1.png'
 export function Footer(){
     return(
-        <header className="footer ">
+        <header className="footer">
             <div className='contenedor'>
             <div className="header-logo ">
             <Link to={"./Home"}>

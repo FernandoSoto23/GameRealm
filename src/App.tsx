@@ -10,7 +10,7 @@ import { Footer } from './Components/footer';
 function App() {
   
   return (
-    <div>
+
       
       <div className='contenedor-barra' >
         <Header></Header>
@@ -19,8 +19,6 @@ function App() {
         <BarraInferior/>
         <Footer></Footer>
       </div>
-      
-    </div>
   );
 }
 

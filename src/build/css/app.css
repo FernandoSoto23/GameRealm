@@ -1066,6 +1066,10 @@ span {
   color: white;
 }
 
+.fondo {
+  background-color: #ededed;
+}
+
 .contenedor-barra {
   background-color: #ededed;
   height: 120rem;
