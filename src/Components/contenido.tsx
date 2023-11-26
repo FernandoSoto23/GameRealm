@@ -14,10 +14,10 @@ import { Home } from "./home";
 import { Login } from "./login";
 import { Menu } from "./menus";
 import { Orden } from "./orden";
-import Resumen from "./resumen";
 import { RegistrarUsuario } from "./RegistrarUsuario";
 import { Producto } from "./producto";
 import { Perfil } from "./perfil";
+import { Resumen } from "./resumen";
 
 export function Contenido(){
     const [id,setId] = useState();

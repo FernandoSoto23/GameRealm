@@ -1,8 +1,117 @@
 
-
-.containerResumen{
-    border: 1px solid black;
-    width: 72rem;
-    margin: 0 auto;
+    .contenedor-objetos{
+        // border: solid black;
+        background-color: aqua;
+        display: flex;
+        flex-direction: row;
+        width: 100rem;
+        height: 25rem;
+        margin-top: 5rem;
+        .card-derecha{
+            width: 70%;
+            height: 100%;
+            // margin-right: 5rem;
+            .card-header{
+                // border: solid black;
+                width: 100%;
+                height: 15%;
+                display: flex;
+                flex-direction: row;
     
-}
+            }
+            .card-body{
+                // border: solid black;
+                background-color: blueviolet;
+                width: 100%;
+                height: 70%;
+                display: flex;
+                flex-direction: row;
+                .centrar-img{
+                    width: 20%;
+                    .imagen{
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .titulo{
+                    border: none;
+                    width: 35%;
+                } 
+                .p{
+                    padding: 1rem;
+                }
+                .precio{
+                    align-items: right;
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 7rem;
+                    // padding-left: 10rem;
+                    width: 35%;
+                    .btn{
+                        border-color: aqua;
+                        width: 3rem;
+                        height: 3rem;   
+                        font-size: 1.2rem;
+                    }
+                }
+                .btn-Margen{
+                    width: 10%;
+                    text-align: end;
+                    // display: flex;
+                    // flex-direction: row;
+                    .btn-eliminar{
+                        align-self: left;
+                        border: none;
+                        background-color: transparent; 
+                        width: 31px;
+                        height: 3rem;
+                    }
+                }
+                
+            }
+            .card-footer{
+                // border: solid black;
+                width: 100%;
+                height: 15%;
+                .p{
+                    font-style: italic;
+                    font-weight: 700;
+                    text-align:end;
+                    font-size: 1rem;
+                    font-size: small;
+                    color: #9B9B9B;
+                }
+            }
+        }
+        .card-izquierda{
+            // border: solid black;
+            background-color: burlywood;
+            width: 30%;
+            height: 100%; 
+            .card-footer{
+                border: solid black;
+                height: 15%;
+            }   
+            .card-body{
+                border: solid black;
+                height: 85%;
+
+                .btn-compra{
+                    padding-top: 1rem;
+                    text-align: center;
+                }
+                .card-resumen{
+                    display: flex;
+                    font-size: 1.2;
+                    list-style-type: none;
+                    // flex-direction: row;
+                    .span{
+                    flex: 1;
+                    text-align: right;
+                    }
+                }
+            }    
+
+        }
+    }
