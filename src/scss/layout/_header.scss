@@ -37,6 +37,7 @@
             .header-navegacion {
                 width: 100%;
                 margin: 0;
+                padding: 0;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -75,8 +76,18 @@
                 padding: 0 2rem;
                 width: 20rem;
                 .card-login-carrito-nombre{
-                    color: $blanco;
-                    font-size: 2rem;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;;
+                    width: 200rem;
+                    p{
+                        color: $blanco;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        margin-bottom: 0;
+                        margin-left: .5rem;
+                    }
                 }
             }
             .boton-buscar {
@@ -96,7 +107,7 @@
     
                 p {
                     color: $blanco;
-                    margin-right: 3rem;
+                    margin-right:1.5rem;
                 }
     
                 img {

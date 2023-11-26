@@ -57,11 +57,10 @@ export function Contenido(){
        
     },[]);
     return(
-        <div style={{backgroundColor:"#ededed", marginTop: "5.7rem"}}>
+        <div style={{backgroundColor:"#ededed", marginTop: "5.3rem"}}>
             
             <Routes>
                             
-                    <Route path="/Carrito" element={<Carrito/>}> </Route>
                     <Route path="/Biblioteca" element={<Biblioteca/>}> </Route>
                     <Route path="/Titilo" element={<Menu Tipo={2} />}> </Route>
 
@@ -77,8 +76,8 @@ export function Contenido(){
                     
 
                     <Route path="/Configuracion" element={<Configuracion/>}> </Route>
-                    <Route path="/Carrito" element={<Carrito/>}> </Route>
-                    <Route path="/Resumen" element={<Resumen/>}> </Route>
+                    {/* <Route path="/Carrito" element={<Carrito/>}> </Route> */}
+                    <Route path="/Carrito" element={<Resumen/>}> </Route>
                     <Route path="/Perfil" element={<Perfil/>}> </Route>
                     
 

@@ -29,10 +29,10 @@ export function Orden(props: any) {
   const [xbox, setXbox] = useState();
   const [playstation, setPlayStation] = useState();
   const [nintendoSwitch, setNintendoSwitch] = useState();
-
+  let cantidad = 0;
   useEffect(() => {
-    OrdenPlatillo();
-  }, []);
+    CargarTitulo();
+  }, [contador]);
 
   function agregar() {
     if (contador < 10) setContador(contador + 1);
@@ -40,7 +40,16 @@ export function Orden(props: any) {
   function quitar() {
     if (contador > 1) setContador(contador - 1);
   }
-  async function OrdenPlatillo() {
+  async function CargarTitulo() {
+    if(localStorage.getItem("carrito")){
+      var carrito = JSON.parse(localStorage.getItem("carrito") ?? "")
+      for(let i = 0; i < carrito.length; i++){
+        if(carrito[i].codigo === codigo){
+          cantidad = carrito[i].cantidad;
+          setContador(cantidad);
+        }
+      }
+    }
     let url = `${WebServiceUrl}/api/titulo/ObtenerTitulo${Codigo}`;
     let resp = await fetch(url);
     let datos = await resp.json();
@@ -63,8 +72,6 @@ export function Orden(props: any) {
     setRegion(datos.region);
     setIdioma(datos.idioma);
     setLink(datos.link)
-
-    console.log("desde plataforma ", NintendoSwitch);
   }
 
   function guardar() {
@@ -213,7 +220,6 @@ export function Orden(props: any) {
               </div>
               <div className="row">
                 <div className="seccion-columna">
-                  <p className="">Cantidad : 1</p>
                   <p className=""> Región: Global</p>
                 </div>
               </div>
@@ -238,14 +244,14 @@ export function Orden(props: any) {
           <div className="card-compra">
             <form>
               <p>Stock disponible</p>
-              <p>563.73 MXN</p>
+              <p>{precio} MXN</p>
               <p>Vendedor oficial : Mojang </p>
               <button className="boton-compra">Comprar ahora</button>
               <div>
               <div className="añadir-carrito">
                         <div className="contenedor-contador">
                             <input type="button" className="btn-numerar" onClick={ quitar } value={" - "} />
-                            <span className="input-number texto-centrado">{contador}</span>
+                            <span className="input-number texto-centrado">{(contador === 0)? cantidad : contador}</span>
                             <input type="button" className="btn-numerar" onClick={ agregar } value={"+"}/>
                         </div>
                         <input type="button" onClick={guardar} className="boton boton-amarillo" value={"Añadir al Carrito"} />
