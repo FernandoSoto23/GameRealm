@@ -74,22 +74,59 @@
                 align-items: center;
                 justify-content: space-between;
                 padding: 0 2rem;
-                width: 20rem;
+                width: 40rem;
                 .card-login-carrito-nombre{
                     display: flex;
                     flex-direction: row;
                     align-items: center;
                     justify-content: center;;
                     width: 200rem;
+                    .perfil{
+                        display: flex;
+                    }
+                    .cerrar-sesion{
+                        display: flex;
+                    }
+
                     p{
                         color: $blanco;
-                        font-size: 1.5rem;
+                        font-size: 1.3rem;
                         font-weight: 700;
                         margin-bottom: 0;
                         margin-left: .5rem;
                     }
                 }
             }
+            .login-crear-cuenta{
+                display: flex;
+                .login{       
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-right: 1rem;
+                    p{
+                        color: $blanco;
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        margin-bottom: 0;
+                        margin-left: .5rem;
+                    }
+                }
+                .crear-cuenta{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-left: 1rem;
+                    p{
+                        color: $blanco;
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        margin-bottom: 0;
+                        margin-right: .5rem;
+                    }
+                }
+            }
+
             .boton-buscar {
                 background-image: url(../../build/img/lupa.png);
                 width: 4rem;

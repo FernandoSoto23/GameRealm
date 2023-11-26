@@ -57,7 +57,7 @@ export function Contenido(){
        
     },[]);
     return(
-        <div style={{backgroundColor:"#ededed", marginTop: "5.3rem"}}>
+        <div style={{backgroundColor:"#ededed", marginTop: "5rem"}}>
             
             <Routes>
                             

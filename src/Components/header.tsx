@@ -5,7 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartArrowDown,
   faCartShopping,
+  faMagnifyingGlass,
+  faPlus,
   faRightFromBracket,
+  faRightToBracket,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/logoheader.png";
@@ -52,6 +55,10 @@ export function Header() {
   const GuardarBusqueda = (event: any) => {
     localStorage.setItem("busqueda", event);
   };
+  const CerrarSesion = () => {
+    localStorage.removeItem("UsuarioGameRealm");
+    window.location.href = "./home";
+  };
   return (
     <header className="header">
       <nav className="header-navegacion">
@@ -59,7 +66,7 @@ export function Header() {
           <Link to={"./Home"}>
             <img src={logo} className="logo" />
           </Link>
-         
+
           <input
             className="input"
             type="text"
@@ -72,7 +79,11 @@ export function Header() {
               }
             }}
           />
-          <input type="button" className="boton boton-buscar" />
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            style={{ color: "#ffffff" }}
+            onClick={() => (window.location.href = "./../CatalogoBusqueda")}
+          />
         </div>
 
         <div>
@@ -107,19 +118,56 @@ export function Header() {
 
         <div className="card-login-carrito">
           {nombreUsuario !== "" ? (
-            <NavLink to="./Perfil" className="card-login-carrito-nombre">
-              <div>
-              <FontAwesomeIcon icon={faUser} style={{color: "#ffffff",}} />
+            <div className="card-login-carrito-nombre">
+              <NavLink to="./Perfil" className="perfil">
+                <div>
+                  <FontAwesomeIcon icon={faUser} style={{ color: "#ffffff" }} />
+                </div>
+                <div style={{ marginRight: "1rem" }}>
+                  <p>{nombreUsuario}</p>
+                </div>
+              </NavLink>
+              <div
+                className="cerrar-sesion"
+                onClick={() => CerrarSesion()}
+                style={{ cursor: "pointer", userSelect: "none" }}
+              >
+                <div style={{ borderInlineStart: "1px solid white" }}>
+                  <p style={{ margin: "0 1rem" }}>Cerrar Sesion</p>
+                </div>
+                <div>
+                  <FontAwesomeIcon
+                    icon={faRightFromBracket}
+                    style={{ color: "#ffffff" }}
+                  />
+                </div>
               </div>
-              <div>
-                <p>{nombreUsuario}</p>
-              </div>
-            </NavLink>
+            </div>
           ) : (
-            <NavLink to="./Login" style={{ color: "white" }}>
-              <FontAwesomeIcon style={{backgroundColor:"white"}} icon={faRightFromBracket}></FontAwesomeIcon>
-              Iniciar Sesion
-            </NavLink>
+            <div className="login-crear-cuenta">
+              <NavLink
+                to="./Login"
+                className="login"
+                style={{ color: "white" }}
+              >
+                <FontAwesomeIcon
+                  icon={faRightToBracket}
+                  style={{ color: "#ffffff" }}
+                />
+                <p>Iniciar Sesion</p>
+              </NavLink>
+              <div style={{borderInlineStart: "1px solid white" }}></div>
+              <NavLink
+                to="./RegistrarUsuario"
+                className="crear-cuenta"
+                style={{ color: "white"}}
+                
+              >
+                
+                <p>Registrarse</p>
+                <FontAwesomeIcon icon={faPlus} style={{ color: "#ffffff" }} />
+              </NavLink>
+            </div>
           )}
           <div>
             <NavLink to="./Carrito">

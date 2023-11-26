@@ -602,7 +602,7 @@ h3 {
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
-    width: 20rem;
+    width: 40rem;
   }
   .header .header-navegacion .card-login-carrito .card-login-carrito-nombre {
     display: flex;
@@ -611,12 +611,47 @@ h3 {
     justify-content: center;
     width: 200rem;
   }
+  .header .header-navegacion .card-login-carrito .card-login-carrito-nombre .perfil {
+    display: flex;
+  }
+  .header .header-navegacion .card-login-carrito .card-login-carrito-nombre .cerrar-sesion {
+    display: flex;
+  }
   .header .header-navegacion .card-login-carrito .card-login-carrito-nombre p {
     color: #FFFFFF;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 0;
     margin-left: 0.5rem;
+  }
+  .header .header-navegacion .login-crear-cuenta {
+    display: flex;
+  }
+  .header .header-navegacion .login-crear-cuenta .login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 1rem;
+  }
+  .header .header-navegacion .login-crear-cuenta .login p {
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+  }
+  .header .header-navegacion .login-crear-cuenta .crear-cuenta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 1rem;
+  }
+  .header .header-navegacion .login-crear-cuenta .crear-cuenta p {
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-right: 0.5rem;
   }
   .header .header-navegacion .boton-buscar {
     background-image: url(../../build/img/lupa.png);
