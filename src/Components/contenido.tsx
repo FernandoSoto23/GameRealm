@@ -21,6 +21,7 @@ import { Categorias } from "./categorias";
 import { CatalogoBusqueda } from "./catalogoBusqueda";
 import { Resumen } from "./resumen";
 import { Biblioteca } from "./biblioteca";
+
 export function Contenido(){
     const [id,setId] = useState();
     let boleanActualizado =false;
@@ -56,17 +57,7 @@ export function Contenido(){
        
     },[]);
     return(
-        <div style={{backgroundColor:"#ededed"}}>
-            <div className="contenido">
-                <NavLink to="./Carrito">
-                    <h3>Carrito</h3>
-                    {location.pathname === "/Carrito" && <div className ="linea-amarilla"></div>}
-                </NavLink>
-                <Link to="./Resumen">
-                    <h3>Resumen</h3>
-                    {location.pathname === "/Resumen" && <div className ="linea-amarilla"></div>}
-                </Link>            
-            </div>
+        <div style={{backgroundColor:"#ededed", marginTop: "5.7rem"}}>
             
             <Routes>
                             

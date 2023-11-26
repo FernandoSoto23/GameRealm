@@ -539,7 +539,6 @@ h3 {
 }
 .header {
   display: none;
-  background-color: rgb(47, 47, 47);
   width: 100%;
 }
 .header .input {
@@ -565,7 +564,6 @@ h3 {
     position: fixed;
     z-index: 10;
     top: 0;
-    background-color: rgb(47, 47, 47);
     width: 100%;
     height: 5rem;
     display: flex;
@@ -637,7 +635,7 @@ h3 {
 /* Aqui no editar poor ahora */
 /* Aqui puedes edditar */
 .header-navegacion {
-  background-color: #0e323c;
+  background-color: rgba(14, 50, 60, 0.9019607843);
   display: flex;
   width: 100%;
   justify-content: center;
