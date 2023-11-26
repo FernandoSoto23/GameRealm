@@ -2,6 +2,8 @@ import { url } from "inspector";
 import Swal from "sweetalert2";
 import React, { useState } from "react";
 import { Spinner } from "reactstrap";
+import { Link } from "react-router-dom";
+import { Home } from "./home";
 
 export function RegistrarUsuario() {
   const [nombreCompleto, setNombre] = useState("");
@@ -260,7 +262,9 @@ export function RegistrarUsuario() {
             </div>
             <div className="boton-orientacion">
               <div>
-                <button className="boton-rojo">Cancelar</button>
+                <Link to={"../Login"}>
+                <button  className="boton-rojo">Cancelar</button>
+                </Link>
               </div>
               <div>
                 <input

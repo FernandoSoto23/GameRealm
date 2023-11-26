@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faGlobe, faMobileScreenButton } from "@fortawesome/free-solid-svg-icons";
 
+
 export const Perfil = (props: any) => {
   const [usuarioPerfil, setUsuarioPerfil] = useState([]);
   const [idPerfil, setIdPerfil] = useState(0);
@@ -88,8 +89,10 @@ export const Perfil = (props: any) => {
         Swal.fire("Los cambios no se guardaron", "", "info");
       }
     });
-
   }
+
+
+
   /*   function usuariolog(){
     let idUsuario : any = localStorage.getItem("usuario");
     idUsuario = JSON.parse(idUsuario);

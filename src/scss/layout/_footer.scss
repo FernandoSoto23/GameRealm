@@ -1,8 +1,11 @@
 .footer{
+    
+    align-self: self-end;
     .contenedor{
         display: flex;
         width: 70%;
-        align-items: center;
+        align-items: end;
+
     }
     padding: 5rem;
     background-color: #054256;
