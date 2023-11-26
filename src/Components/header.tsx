@@ -101,7 +101,7 @@ export function Header() {
 
         <div className="card-login-carrito">
           {nombreUsuario !== "" ? (
-            <NavLink to="./Perfil">{nombreUsuario}</NavLink>
+            <NavLink to="./Perfil" className="card-login-carrito-nombre">{nombreUsuario}</NavLink>
           ) : (
             <NavLink to="./Login" style={{ color: "white" }}>
               <FontAwesomeIcon icon={faRightFromBracket}></FontAwesomeIcon>

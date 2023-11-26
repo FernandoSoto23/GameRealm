@@ -68,8 +68,12 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                padding: 0 2rem;
                 width: 20rem;
-                
+                .card-login-carrito-nombre{
+                    color: $blanco;
+                    font-size: 2rem;
+                }
             }
             .boton-buscar {
                 background-image: url(../../build/img/lupa.png);
