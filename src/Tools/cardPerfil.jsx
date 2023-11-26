@@ -22,16 +22,8 @@ export const CardPerfil = (props) => {
           <p className="text-muted mb-1">{nombre}</p>
 
           <p className="text-muted mb-1">{perfil}</p>
-          <p className="text-muted mb-4">
-            {ciudad} {estado}, {domicilio}
-          </p>
           <div className="d-flex justify-content-center mb-2">
-            <button type="button" className="btn btn-primary">
-              Mensaje
-            </button>
-            <button type="button" className="btn btn-outline-primary ms-1">
-              Ver
-            </button>
+
           </div>
         </div>
       </div>

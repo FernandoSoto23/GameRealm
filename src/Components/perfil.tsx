@@ -4,7 +4,10 @@ import { useEffect, useState } from "react";
 
 import { WebServiceUrl } from "../clases/rutas";
 import { CardPerfil } from "../Tools/cardPerfil";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, InputGroup, Input, InputGroupText, Col, Row, Form } from "reactstrap";
+import Swal from "sweetalert2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar, faGlobe, faMobileScreenButton } from "@fortawesome/free-solid-svg-icons";
 
 export const Perfil = (props: any) => {
   const [usuarioPerfil, setUsuarioPerfil] = useState([]);
@@ -45,11 +48,48 @@ export const Perfil = (props: any) => {
       console.error("nuevos errores" + error);
     }
   }
- function LogOut(){
-  localStorage.removeItem("UsuarioGameRealm");
-  window.location.href ="./home";
- }
+  function LogOut() {
+    localStorage.removeItem("UsuarioGameRealm");
+    window.location.href = "./home";
+  }
 
+  const Separador = (event: any) => {
+    const nuevoNumero = event.target.value;
+
+    if (
+      nuevoNumero.length === 2 ||
+      nuevoNumero.length === 5 ||
+      nuevoNumero.length === 8 ||
+      nuevoNumero.length === 11 ||
+      nuevoNumero.lenght === 14
+    ) {
+      // Agregar guion después de cada 4 dígitos
+      const nuevoNumeroConSeparador = nuevoNumero + "-";
+
+      // Actualizar el estado con el nuevo número con guion
+      setTelefono(nuevoNumeroConSeparador);
+    } else {
+      // Actualizar el estado con el nuevo número sin guion
+      setTelefono(nuevoNumero);
+    }
+  };
+  const GuardarDatos = () => {
+    Swal.fire({
+      title: "¿Estas seguro de guardar los datos?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Si",
+      denyButtonText: `No`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire("Guardado", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("Los cambios no se guardaron", "", "info");
+      }
+    });
+
+  }
   /*   function usuariolog(){
     let idUsuario : any = localStorage.getItem("usuario");
     idUsuario = JSON.parse(idUsuario);
@@ -93,37 +133,80 @@ export const Perfil = (props: any) => {
                         </div>
                         <div>
                           <Modal isOpen={modal} toggle={toggle}>
-                            <ModalHeader toggle={toggle}>
+                            <ModalHeader style={{color: "white"}} className="bg-primary" toggle={toggle}>
                               Editar Perfil
                             </ModalHeader>
                             <ModalBody>
-                              <div className="row">
-                                <div className="col">
-                                  <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="First name"
-                                    aria-label="Nombre"
-                                    value={usuario.nombre}
-                                  />
-                                </div>
-                                <div className="col">
-                                  <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Last name"
-                                    aria-label="Usuario"
-                                    value={usuario.nombreUsuario}
-                                  />
-                                </div>
-                              </div>
+                              <Form>
+                                <Row >
+                                  <Col md={10}>
+                                    {/* Nombre */}
+                                    <FormGroup>
+                                      <InputGroup>
+                                        <InputGroupText>Nombre</InputGroupText>
+                                        <Input placeholder="" type="text" />
+                                      </InputGroup>
+                                    </FormGroup>
+                                    {/* Apellido */}
+                                    <FormGroup>
+                                      <InputGroup>
+                                        <InputGroupText>Apellido</InputGroupText>
+                                        <Input placeholder="" type="text" />
+                                      </InputGroup>
+                                    </FormGroup>
+                                    {/* Email (deshabilitado) */}
+                                    <FormGroup>
+                                      <InputGroup>
+                                        <InputGroupText>Email</InputGroupText>
+                                        <Input disabled value={usuario.email} />
+                                      </InputGroup>
+                                    </FormGroup>
+                                  </Col>
+                                  
+                                  <Col md={3}>
+                                    {/* Teléfono */}
+                                    <FormGroup>
+                                      <InputGroup>
+                                        <InputGroupText><FontAwesomeIcon icon={faMobileScreenButton} /></InputGroupText>
+                                        <Input
+                                          min={0}
+                                          maxLength={14}
+                                          placeholder="Teléfono"
+                                          type="text"
+                                          onChange={Separador}
+                                          value={telefono}
+                                        />
+                                      </InputGroup>
+                                    </FormGroup>
+                                  </Col>
+
+                                  <Col md={3}>
+                                    {/* País */}
+                                    <FormGroup>
+                                      <InputGroup>
+                                        <InputGroupText><FontAwesomeIcon icon={faGlobe} /></InputGroupText>
+                                        <Input placeholder="País" type="text" />
+                                      </InputGroup>
+                                    </FormGroup>
+                                  </Col>
+                                  <Col md={3}>
+                                    {/* Fecha de nacimiento */}
+                                    <FormGroup>
+                                      <InputGroup>
+                                        <InputGroupText><FontAwesomeIcon icon={faCalendar} /></InputGroupText>
+                                        <Input type="date" />
+                                      </InputGroup>
+                                    </FormGroup>
+                                  </Col>
+                                </Row>
+                              </Form>
                             </ModalBody>
                             <ModalFooter>
-                              <Button color="primary" onClick={toggle}>
-                                Do Something
+                              <Button color="success" onClick={GuardarDatos}>
+                                Guardar
                               </Button>{" "}
-                              <Button color="secondary" onClick={toggle}>
-                                Cancel
+                              <Button color="danger" onClick={toggle}>
+                                Cancelar
                               </Button>
                             </ModalFooter>
                           </Modal>
@@ -181,7 +264,7 @@ export const Perfil = (props: any) => {
                         </div>
                         <hr />
                         <div className="btn-cerrarSesion">
-                        <Button onClick={LogOut}  color="danger"> Cerrar sesión</Button>
+                          <Button onClick={LogOut} color="danger"> Cerrar sesión</Button>
                         </div>
                       </div>
                     </div>
