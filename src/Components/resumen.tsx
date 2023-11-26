@@ -5,12 +5,13 @@ import {
   faEnvelope,
   faHashtag,
   faMinus,
+  faPenToSquare,
   faPlus,
   faTrash,
   faUserTie,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import {
   Button,
   Modal,
@@ -29,6 +30,7 @@ import { text } from "stream/consumers";
 import Swal from "sweetalert2";
 import { number } from "yargs";
 import { WebServiceUrl } from "../clases/rutas";
+import { Link, NavLink } from "react-router-dom";
 
 export function Resumen() {
   const [contador, setContador] = useState(0);
@@ -37,7 +39,11 @@ export function Resumen() {
   const [imagen, setImagen] = useState("");
   const [precio, setPrecio] = useState(0);
   const [total, setTotal] = useState(0);
-
+  const [modal, setModal] = useState(false);
+  const [metodoDePago, setMetodoDePago] = useState("0");
+  const [numeroDeTarjeta, setNumeroDeTarjeta] = useState("");
+  const [fecha, setFecha] = useState("");
+  const [carrito, setCarrito] = useState([]);
   function Total(numer1: number, numero2: number, resultado: number) {}
   function Alerta(respuesta: any, mensaje: string) {
     const Toast = Swal.mixin({
@@ -129,11 +135,6 @@ export function Resumen() {
       Alerta(true, "Se añadio Correctamente");
     }
   }
-
-  const [modal, setModal] = useState(false);
-  const [metodoDePago, setMetodoDePago] = useState("0");
-  const [numeroDeTarjeta, setNumeroDeTarjeta] = useState("");
-  const [fecha, setFecha] = useState("");
   const toggleModal = () => {
     setModal(!modal);
   };
@@ -186,6 +187,15 @@ export function Resumen() {
       setFecha(nuevaFecha);
     }
   };
+  useEffect(() => {
+    CargarCarrito();
+  }, []);
+  const CargarCarrito = () => {
+    if (localStorage.getItem("carrito")) {
+      const carritoLocal = localStorage.getItem("carrito") ?? "";
+      setCarrito(JSON.parse(carritoLocal));
+    }
+  };
   return (
     <div style={{ margin: "0 auto", width: "100rem" }}>
       <div className="contenedor-objetos">
@@ -193,38 +203,38 @@ export function Resumen() {
           <div className="card-header">
             <h3>Tu carrito</h3>
           </div>
-          <div className="card-body">
-            <div className="centrar-img">
-              <img
-                className="imagen"
-                src="https://i.ibb.co/qBrd2tN/minecraftr.jpg"
-              />
+          {carrito.map((carrito: any) => (
+            <>
+            <div className="card-body">
+              <div className="centrar-img">
+                <img className="imagen" src={`${carrito.imagen}`} />
+              </div>
+              <div className="titulo">
+                <p className="p">{carrito.nombre}</p>
+              </div>
+
+              <div className="cantidad">
+                <p>Cantidad</p>
+                <p className="contador">{carrito.cantidad}</p>
+                <p className="precio">
+                  <span style={{ color: "#22a14a" }}>$</span>
+                  {carrito.precio} MXN
+                </p>
+              </div>
+
+              <div className="btn-Margen">
+                <NavLink to={`/CatalogoBusqueda/Orden?codigo=${carrito.codigo}`} className="btn btn-warning">
+                  <FontAwesomeIcon icon={faPenToSquare} />
+                </NavLink>
+                <button className="btn btn-danger">
+                  <FontAwesomeIcon icon={faTrash} />
+                </button>
+              </div>
             </div>
-            <div className="titulo">
-              <strong>
-                <p className="p">Minecraft Java (PC)</p>
-              </strong>
-            </div>
-            <div className="cantidad">
-              <button className="btn" onClick={quitar}>
-                <FontAwesomeIcon icon={faMinus} />
-              </button>
-              <strong>
-                <p className="contador">{contador}</p>
-              </strong>
-              <button className="btn" onClick={agregar}>
-                <FontAwesomeIcon icon={faPlus} />
-              </button>
-              <strong>
-                <p className="precio">563.73 MXN</p>
-              </strong>
-            </div>
-            <div className="btn-Margen">
-              <button className="btn-eliminar">
-                <FontAwesomeIcon icon={faTrash} />
-              </button>
-            </div>
-          </div>
+            <div className="linea"></div>
+            </>
+            
+          ))}
           <div className="card-footer">
             <p className="p">
               Al hacer una compra estas aceptando nuestros terminos y
@@ -232,6 +242,7 @@ export function Resumen() {
             </p>
           </div>
         </div>
+
         <div className="card-izquierda">
           <div className="card-header">
             <h3>Resumen</h3>
