@@ -19,8 +19,8 @@ import { Producto } from "./producto";
 import { Perfil } from "./perfil";
 import { Categorias } from "./categorias";
 import { CatalogoBusqueda } from "./catalogoBusqueda";
-import {Resumen} from "./resumen";
-
+import { Resumen } from "./resumen";
+import { Biblioteca } from "./biblioteca";
 export function Contenido(){
     const [id,setId] = useState();
     let boleanActualizado =false;
@@ -71,7 +71,7 @@ export function Contenido(){
             <Routes>
                             
                     <Route path="/Carrito" element={<Carrito/>}> </Route>
-                    <Route path="/Biblioteca" element={<Producto/>}> </Route>
+                    <Route path="/Biblioteca" element={<Biblioteca/>}> </Route>
                     <Route path="/Titilo" element={<Menu Tipo={2} />}> </Route>
 
                     <Route path="/Categorias" element={<Categorias />}> </Route>

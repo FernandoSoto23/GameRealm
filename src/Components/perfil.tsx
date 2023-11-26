@@ -63,7 +63,7 @@ export const Perfil = (props: any) => {
       {/*   <!-- /.card-header --> */}
       {usuarioPerfil !== null &&
         usuarioPerfil.map((usuario: any) => (
-          <div className="card-body" style={{ backgroundColor: "#357e92" }}>
+          <div className="card-body" style={{ backgroundColor: "#ededed" }}>
             <section>
               <div className="container py-5">
                 <div className="row">

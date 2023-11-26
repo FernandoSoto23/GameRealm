@@ -1,5 +1,64 @@
 
 
-.contenedor{
-    margin-top: 5rem;
+.contenedor-categorias{
+    // styles.scss
+
+// Importar los estilos base de AdminLTE si es necesario
+// @import "ruta/a/adminlte.scss";
+
+// Definir variables (opcional)
+$color-info: #17a2b8;
+
+// Estilos del cuadro de información
+.small-box {
+  display: block;
+  width: 100%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+  border-radius: 3px;
+  margin-bottom: 20px;
+  background-color: $color-info;
+
+  & .inner {
+    padding: 10px;
+    color: #fff;
+
+    & h3 {
+      font-size: 36px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    & p {
+      margin: 0;
+    }
+  }
+
+  & .icon {
+    display: block;
+    float: left;
+    height: 64px;
+    width: 64px;
+    text-align: center;
+    line-height: 64px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-right: 15px;
+
+    & i {
+      font-size: 30px;
+      color: #fff;
+    }
+  }
+
+  & .small-box-footer {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 3px 0;
+
+    & i {
+      margin-left: 5px;
+    }
+  }
+}
 }
