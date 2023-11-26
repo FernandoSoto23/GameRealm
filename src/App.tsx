@@ -5,6 +5,7 @@ import { Contenido } from './Components/contenido';
 import './build/css/app.css';
 import { BarraInferior } from './Components/barraInferior';
 import { Header } from './Components/header';
+import { Footer } from './Components/footer';
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
         <Barra/>
         <Contenido></Contenido>
         <BarraInferior/>
+        <Footer></Footer>
       </div>
       
     </div>

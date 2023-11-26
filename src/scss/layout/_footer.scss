@@ -1,5 +1,11 @@
 .footer{
-    background-color: rgb(47, 47, 47);
+    .contenedor{
+        display: flex;
+        width: 70%;
+        align-items: center;
+    }
+    padding: 5rem;
+    background-color: #054256;
     width: 100%;
     height: 10rem;
     display: flex;
@@ -9,20 +15,15 @@
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
 
 
-        .buscar-producto{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 50rem;
-            .input{
-                
-                margin: 0 1rem;
-                width: 70%;
-            }
-            
-        }
     }
+}
+.img{
+    width: 10rem;
+    height: 10rem;
+}
+span{
+    text-align: center;
+    color: white
 }

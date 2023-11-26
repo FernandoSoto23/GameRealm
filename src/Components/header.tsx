@@ -7,7 +7,7 @@ import {
   faCartShopping,
   faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
-import sm from "../assets/GM.svg";
+import logo from "../assets/logoheader.png";
 import { WebServiceUrl } from "../clases/rutas";
 
 export function Header() {
@@ -54,7 +54,9 @@ export function Header() {
   return (
     <header className="header">
       <nav className="header-navegacion">
+      
         <div className="buscar-producto">
+        <img src={logo} className="logo" />
           <input
             className="input"
             type="text"
